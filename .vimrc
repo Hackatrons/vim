@@ -62,3 +62,6 @@ set backspace=indent,eol,start
 " full menu for command tab completion
 set wildmenu
 set wildmode=list:longest,full
+
+" EasyMotion: one leader key instead of two
+let g:EasyMotion_leader_key = '<Leader>'
