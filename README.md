@@ -20,3 +20,8 @@ git submodule update
 cmd /c mklink %HOME%\.vimrc %HOME%\.vim\.vimrc
 cmd /c mklink /D %HOME%\vimfiles %HOME%\.vim
 ```
+
+Configure Git to use full VIM as the text editor instead of it's own:
+```sh
+git config --global core.editor "'C:\Program Files (x86)\Vim\vim80\vim.exe' -f -i NONE"
+```
