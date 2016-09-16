@@ -68,6 +68,9 @@ let g:EasyMotion_leader_key = '<Leader>'
 " map ; to : for quicker command execution e.g. ;e is faster to type than :e
 nnoremap ; :
 
+" set leader key
+let mapleader = ","
+
 " tab/shift tab for indentation
 " for command mode
 nnoremap <S-Tab> <<
