@@ -68,3 +68,10 @@ let g:EasyMotion_leader_key = '<Leader>'
 " https://github.com/Maximus5/ConEmu/issues/641
 inoremap <Char-0x07F> <BS>
 nnoremap <Char-0x07F> <BS>
+
+" open nerd tree if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" toggle key
+map <C-n> :NERDTreeToggle<CR>
