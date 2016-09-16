@@ -15,6 +15,7 @@ set shiftwidth=4
 " tab/shift tab for indentation
 " for command mode
 nnoremap <S-Tab> <<
+nnoremap <Tab> >> 
 " for insert mode
 inoremap <S-Tab> <C-d>
 
@@ -27,9 +28,6 @@ set ignorecase
 
 " incremental search while typing
 set incsearch
-
-" highlight search results
-set hlsearch
 
 " line numbers
 set number
@@ -65,3 +63,8 @@ set wildmode=list:longest,full
 
 " EasyMotion: one leader key instead of two
 let g:EasyMotion_leader_key = '<Leader>'
+
+" backspace fix for ConEmu
+" https://github.com/Maximus5/ConEmu/issues/641
+inoremap <Char-0x07F> <BS>
+nnoremap <Char-0x07F> <BS>
