@@ -98,3 +98,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " toggle key
 map <C-n> :NERDTreeToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Matchit http://www.vim.org/scripts/script.php?script_id=39
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:source ~/.vim/plugin/matchit.vim
+:helptags ~/.vim/doc
