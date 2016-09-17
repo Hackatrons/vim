@@ -56,6 +56,11 @@ set shiftwidth=4
 " auto file type detection for indentation without relying on the file extension
 filetype plugin indent on
 
+" set code folding on indentation
+set foldmethod=indent
+" expand all folds by default (up to 999 depth) 
+set foldlevelstart=999
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EasyMotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
