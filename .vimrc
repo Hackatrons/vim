@@ -33,8 +33,17 @@ set wildmode=list:longest,full
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
 colorscheme solarized
+
+if has("gui_running")
+	if &diff
+		" I prefer a light background for diffs
+    	set background=light
+	else
+		set background=dark
+	endif
+endif
+
 " to fix an issue with highlighting in ConEmu
 " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
 set term=xterm
@@ -43,11 +52,16 @@ let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Code Styling/Formatting
+" Styling/Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntax highlighting
 syntax on
 syntax enable
+
+if has("gui_running")
+	set guifont=Consolas:h11:cANSI
+	au GUIEnter * simalt ~x " maximize the window
+endif
 
 " tab width = 4 spaces
 set tabstop=4
