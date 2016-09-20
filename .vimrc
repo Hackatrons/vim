@@ -50,6 +50,9 @@ set backspace=indent,eol,start
 set wildmenu
 set wildmode=list:longest,full
 
+" enable spell checking
+set spell spelllang=en_au
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
