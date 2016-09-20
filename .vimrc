@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle 
+" Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -19,12 +19,12 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
-			
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General 
+" General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " import windows compatibility settings
 source $VIMRUNTIME/mswin.vim
@@ -63,7 +63,7 @@ set nowrap
 
 " large undo history
 set history=1000
-set undolevels=1000    					
+set undolevels=1000
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
@@ -73,7 +73,7 @@ colorscheme solarized
 if has("gui_running")
 	if &diff
 		" I prefer a light background for diffs
-    	set background=light
+		set background=light
 	else
 		set background=dark
 	endif
@@ -81,10 +81,12 @@ endif
 
 " to fix an issue with highlighting in ConEmu
 " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
-set term=xterm
-set t_Co=256
-let &t_AB="\e[48;5;%dm"
-let &t_AF="\e[38;5;%dm"
+if !has("gui_running")
+	set term=xterm
+	set t_Co=256
+	let &t_AB="\e[48;5;%dm"
+	let &t_AF="\e[38;5;%dm"
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Styling/Formatting
@@ -103,7 +105,7 @@ set shiftwidth=4
 
 " set ode folding on indentation
 set foldmethod=indent
-" expand all folds by default (up to 999 depth) 
+" expand all folds by default (up to 999 depth)
 set foldlevelstart=999
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -130,7 +132,7 @@ let mapleader = ","
 " tab/shift tab for indentation
 " for command mode
 nnoremap <S-Tab> <<
-nnoremap <Tab> >> 
+nnoremap <Tab> >>
 " for insert mode
 inoremap <S-Tab> <C-d>
 
