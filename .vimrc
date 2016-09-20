@@ -77,7 +77,6 @@ let &t_AF="\e[38;5;%dm"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Styling/Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" syntax highlighting
 syntax on
 syntax enable
 
@@ -90,10 +89,16 @@ endif
 set tabstop=4
 set shiftwidth=4
 
-" set code folding on indentation
+" set ode folding on indentation
 set foldmethod=indent
 " expand all folds by default (up to 999 depth) 
 set foldlevelstart=999
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Code
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" disable automatic comment continuation
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EasyMotion
