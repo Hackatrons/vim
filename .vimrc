@@ -18,7 +18,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
-
+Plugin 'scrooloose/nerdcommenter'
+			
 call vundle#end()            " required
 filetype plugin indent on    " required
 
