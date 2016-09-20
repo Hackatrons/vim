@@ -25,9 +25,6 @@ filetype plugin indent on    " required
 " import windows compatibility settings
 source $VIMRUNTIME/mswin.vim
 
-" pathogen
-execute pathogen#infect()
-
 " case insensitive searching
 set smartcase
 set ignorecase
