@@ -178,3 +178,11 @@ let NERDTreeShowHidden=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show hidden files
 let g:ctrlp_show_hidden = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" show airline even when only single file is open
+set laststatus=2
+" show tabs
+let g:airline#extensions#tabline#enabled = 1
