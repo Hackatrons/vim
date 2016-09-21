@@ -162,6 +162,10 @@ nmap <silent> <c-l> :wincmd l<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" jump to next error
+nnoremap <silent> q] :cnext<CR>
+nnoremap <silent> q[ :cprevious<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
