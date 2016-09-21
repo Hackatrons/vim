@@ -120,6 +120,11 @@ set foldlevelstart=999
 " disable automatic comment continuation
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" retain indentation for new lines
+set autoindent
+" indent based on the code syntax (used in conjunction with autoindent)
+set cindent
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EasyMotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
