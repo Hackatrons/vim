@@ -17,10 +17,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'unblevable/quick-scope'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'matchit.zip'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -68,7 +70,7 @@ set history=1000
 set undolevels=1000
 
 " Use whole "words" when opening URLs.
-" This avoids cutting off parameters (after '?') and anchors (after '#'). 
+" This avoids cutting off parameters (after '?') and anchors (after '#').
 " See http://vi.stackexchange.com/q/2801/1631
 let g:netrw_gx="<cWORD>"
 
@@ -187,12 +189,6 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Matchit http://www.vim.org/scripts/script.php?script_id=39
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:source ~/.vim/plugin/matchit.vim
-:helptags ~/.vim/doc
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show hidden files
@@ -205,6 +201,12 @@ let g:ctrlp_show_hidden = 1
 set laststatus=2
 " show tabs
 let g:airline#extensions#tabline#enabled = 1
+" show the buffer number in tabs
+let g:airline#extensions#tabline#buffer_nr_show = 1
+" Just show the filename (no path) in the tab
+let g:airline#extensions#tabline#fnamemod = ':t'
+" show current git branch
+let g:airline#extensions#branch#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick-scope
