@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'unblevable/quick-scope'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -139,6 +140,7 @@ nnoremap ; :
 
 " set leader key
 let mapleader = "\<space>"
+nmap , <space>
 
 " tab/shift tab for indentation
 " for command mode
