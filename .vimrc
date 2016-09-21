@@ -65,6 +65,11 @@ set nowrap
 set history=1000
 set undolevels=1000
 
+" Use whole "words" when opening URLs.
+" This avoids cutting off parameters (after '?') and anchors (after '#'). 
+" See http://vi.stackexchange.com/q/2801/1631
+let g:netrw_gx="<cWORD>"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
