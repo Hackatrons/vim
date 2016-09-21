@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'unblevable/quick-scope'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -197,3 +198,9 @@ let g:ctrlp_show_hidden = 1
 set laststatus=2
 " show tabs
 let g:airline#extensions#tabline#enabled = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quick-scope
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
