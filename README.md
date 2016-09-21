@@ -8,20 +8,33 @@ cd ~/.vim
 git submodule init
 git submodule update
 ln -s ~/.vim/.vimrc ~/.vimrc
+vim +PluginInstall +qall
 ```
 
 ### Windows Installation
 PowerShell:
-```sh
+```powershell
 git clone git@gitlab.com:DanielHack/vim.git $env:HOME\.vim
 cd $env:HOME\.vim
 git submodule init
 git submodule update
 cmd /c mklink %HOME%\.vimrc %HOME%\.vim\.vimrc
 cmd /c mklink /D %HOME%\vimfiles %HOME%\.vim
+vim +PluginInstall +qall
 ```
 
+TODO: fix issue where $env:HOME is null on some machines. Can't use "~/" because it may not be set and $HOME goes to the H: drive for my work PC :|
+
+#### Git for Windows Configuration
 Configure Git to use full VIM as the text editor instead of it's own:
 ```sh
 git config --global core.editor "'C:\Program Files (x86)\Vim\vim80\vim.exe' -f -i NONE"
 ```
+
+#### VsVim Configuration
+```cmd
+cmd /c mklink %HOME%\.vsvimrc %HOME%\.vim\.vsvimrc
+```
+In Visual Studio:
+1. Tools -> Options -> VsVim
+2. Change "VimRc File Loading" to vsvimrc files only

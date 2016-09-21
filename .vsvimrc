@@ -1,0 +1,58 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype plugin indent on
+
+" case insensitive searching
+set smartcase
+set ignorecase
+
+" incremental search while typing
+set incsearch
+
+" enable line numbers
+set number
+
+" highlight matching braces, brackets, etc
+set showmatch
+
+" enable row/col ruler
+set ruler
+
+" allow backspace to delete these characters
+set backspace=indent,eol,start
+
+" tab width = 4 spaces
+set tabstop=4
+set shiftwidth=4
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Code
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" retain indentation for new lines
+set autoindent
+" indent based on the code syntax (used in conjunction with autoindent)
+set cindent
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" map ; to : for quicker command execution e.g. ;e is faster to type than :e
+nnoremap ; :
+
+" set leader key
+let mapleader = "\<space>"
+
+" tab/shift tab for indentation
+" for command mode
+nnoremap <S-Tab> <<
+nnoremap <Tab> >>
+" for insert mode
+inoremap <S-Tab> <C-d>
+
+" remap jj to escape in insert mode
+inoremap jj <Esc>
+
+" jump to next error
+nnoremap <silent> q] :cnext<CR>
+nnoremap <silent> q[ :cprevious<CR>
