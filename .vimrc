@@ -127,7 +127,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 nnoremap ; :
 
 " set leader key
-let mapleader = ","
+let mapleader = "\<space>"
 
 " tab/shift tab for indentation
 " for command mode
