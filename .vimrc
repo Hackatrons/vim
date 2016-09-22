@@ -31,7 +31,7 @@ filetype plugin indent on    " required
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " import windows compatibility settings
-if has("win32")
+if has("win32") || has("win64")
 	source $VIMRUNTIME/mswin.vim
 endif
 
