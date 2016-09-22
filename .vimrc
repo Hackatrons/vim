@@ -88,6 +88,8 @@ if has("gui_running")
 	else
 		set background=dark
 	endif
+else
+	set background=dark
 endif
 
 " to fix an issue with highlighting in ConEmu
