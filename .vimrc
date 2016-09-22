@@ -31,7 +31,9 @@ filetype plugin indent on    " required
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " import windows compatibility settings
-source $VIMRUNTIME/mswin.vim
+if has("win32")
+	source $VIMRUNTIME/mswin.vim
+endif
 
 " case insensitive searching
 set smartcase
