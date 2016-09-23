@@ -13,6 +13,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
@@ -85,8 +86,11 @@ set undolevels=1000
 " See http://vi.stackexchange.com/q/2801/1631
 let g:netrw_gx="<cWORD>"
 
+" show whitespace characters
+" trail = show trailing whitespace at end of line
+" precedes/extends = these show when the line exceeds the buffer width causing horizontal scroll
 set list
-set listchars=tab:▸\ ,trail:·,precedes:«,extends:»
+set listchars=tab:»\ ,trail:·,precedes:«,extends:»
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
@@ -118,7 +122,7 @@ syntax on
 syntax enable
 
 if has("gui_running")
-	set guifont=Consolas:h11:cANSI
+	set guifont=DroidSansMonoForPowerline_NF:h11:cANSI
 	au GUIEnter * simalt ~x " maximize the window
 endif
 
@@ -233,6 +237,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " show current git branch
 let g:airline#extensions#branch#enabled = 1
+" enable icons when using a patched font
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick-scope
