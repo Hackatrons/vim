@@ -86,6 +86,9 @@ set undolevels=1000
 " See http://vi.stackexchange.com/q/2801/1631
 let g:netrw_gx="<cWORD>"
 
+" highlight the line the cursor is in
+set cursorline
+
 " show whitespace characters
 " trail = show trailing whitespace at end of line
 " precedes/extends = these show when the line exceeds the buffer width causing horizontal scroll
