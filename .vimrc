@@ -100,6 +100,9 @@ set listchars=tab:»\ ,trail:·,precedes:«,extends:»
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
 
+" set the visibility of whitespace characters to low
+let g:solarized_visibility="low"
+
 if has("gui_running")
 	if &diff
 		" I prefer a light background for diffs
