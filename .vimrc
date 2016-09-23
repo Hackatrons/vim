@@ -24,6 +24,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'matchit.zip'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -68,6 +71,11 @@ set hidden
 " don't wrap lines
 set nowrap
 
+" the encoding displayed
+set encoding=utf-8
+" the encoding written to file.
+set fileencoding=utf-8
+
 " large undo history
 set history=1000
 set undolevels=1000
@@ -76,6 +84,9 @@ set undolevels=1000
 " This avoids cutting off parameters (after '?') and anchors (after '#').
 " See http://vi.stackexchange.com/q/2801/1631
 let g:netrw_gx="<cWORD>"
+
+set list
+set listchars=tab:▸\ ,trail:·,precedes:«,extends:»
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
@@ -191,6 +202,18 @@ map <C-n> :NERDTreeToggle<CR>
 " show hidden files
 let NERDTreeShowHidden=1
 
+" NERDTree git plugin icons
+let g:NERDTreeIndicatorMapCustom = {
+	\ "Modified"  : "✹",
+	\ "Staged"    : "✚",
+	\ "Untracked" : "✭",
+	\ "Renamed"   : "➜",
+	\ "Unmerged"  : "═",
+	\ "Deleted"   : "✖",
+	\ "Dirty"     : "✗",
+	\ "Clean"     : "✔︎",
+	\ "Unknown"   : "?"
+\ }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -218,7 +241,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Git Gutter 
+" Git Gutter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 250ms update interval for detecting changes
 set updatetime=250
