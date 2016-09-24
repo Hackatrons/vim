@@ -14,10 +14,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'unblevable/quick-scope'
@@ -239,17 +238,72 @@ let g:ctrlp_show_hidden = 1
 " Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show airline even when only single file is open
+"set laststatus=2
+"" show tabs
+"let g:airline#extensions#tabline#enabled = 1
+"" show the buffer number in tabs
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+"" Just show the filename (no path) in the tab
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"" show current git branch
+"let g:airline#extensions#branch#enabled = 1
+"" enable icons when using a patched font
+"let g:airline_powerline_fonts=1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lightline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" show lightline even when only single file is open
 set laststatus=2
-" show tabs
-let g:airline#extensions#tabline#enabled = 1
-" show the buffer number in tabs
-let g:airline#extensions#tabline#buffer_nr_show = 1
-" Just show the filename (no path) in the tab
-let g:airline#extensions#tabline#fnamemod = ':t'
-" show current git branch
-let g:airline#extensions#branch#enabled = 1
-" enable icons when using a patched font
-let g:airline_powerline_fonts=1
+
+let g:lightline = {
+\	'colorscheme': 'wombat',
+\	'separator': { 'left': '', 'right': '' },
+\	'subseparator': { 'left': '|', 'right': '|' },
+\	'active': {
+\		'left': [
+\			[ 'mode', 'paste' ],
+\			[ 'fugitive', 'readonly', 'filename', ] ]
+\	},
+\	'component_function': {
+\		'fugitive': 'LightLineFugitive',
+\		'readonly': 'LightLineReadonly',
+\		'modified': 'LightLineModified',
+\		'filename': 'LightLineFilename'
+\	},
+\}
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "x"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+function! LightLineFilename()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick-scope
