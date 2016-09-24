@@ -13,7 +13,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'ryanoasis/vim-devicons'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
@@ -25,7 +24,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'matchit.zip'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
@@ -99,9 +97,6 @@ set listchars=tab:»\ ,trail:·,precedes:«,extends:»
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
 
-" set the visibility of whitespace characters to low
-let g:solarized_visibility="low"
-
 if has("gui_running")
 	if &diff
 		" I prefer a light background for diffs
@@ -129,7 +124,7 @@ syntax on
 syntax enable
 
 if has("gui_running")
-	set guifont=DroidSansMonoForPowerline_NF:h11:cANSI
+	set guifont=Consolas:h11
 	au GUIEnter * simalt ~x " maximize the window
 endif
 
@@ -216,39 +211,11 @@ map <C-n> :NERDTreeToggle<CR>
 " show hidden files
 let NERDTreeShowHidden=1
 
-" NERDTree git plugin icons
-let g:NERDTreeIndicatorMapCustom = {
-	\ "Modified"  : "✹",
-	\ "Staged"    : "✚",
-	\ "Untracked" : "✭",
-	\ "Renamed"   : "➜",
-	\ "Unmerged"  : "═",
-	\ "Deleted"   : "✖",
-	\ "Dirty"     : "✗",
-	\ "Clean"     : "✔︎",
-	\ "Unknown"   : "?"
-\ }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show hidden files
 let g:ctrlp_show_hidden = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Airline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" show airline even when only single file is open
-"set laststatus=2
-"" show tabs
-"let g:airline#extensions#tabline#enabled = 1
-"" show the buffer number in tabs
-"let g:airline#extensions#tabline#buffer_nr_show = 1
-"" Just show the filename (no path) in the tab
-"let g:airline#extensions#tabline#fnamemod = ':t'
-"" show current git branch
-"let g:airline#extensions#branch#enabled = 1
-"" enable icons when using a patched font
-"let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline
