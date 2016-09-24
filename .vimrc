@@ -92,7 +92,7 @@ set cursorline
 " show whitespace characters
 " trail = show trailing whitespace at end of line
 " precedes/extends = these show when the line exceeds the buffer width causing horizontal scroll
-set list
+"set list
 set listchars=tab:»\ ,trail:·,precedes:«,extends:»
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -201,6 +201,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " jump to next error
 nnoremap <silent> q] :cnext<CR>
 nnoremap <silent> q[ :cprevious<CR>
+
+" map escape to clear highlighting from last search
+nnoremap <silent> // :noh<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
