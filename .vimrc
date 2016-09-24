@@ -25,6 +25,7 @@ Plugin 'matchit.zip'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'moll/vim-bbye'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -283,3 +284,8 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 250ms update interval for detecting changes
 set updatetime=250
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" BByte (Buffer Bye)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>q :Bdelete<CR>
