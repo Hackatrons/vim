@@ -13,6 +13,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
@@ -23,6 +24,10 @@ Plugin 'unblevable/quick-scope'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'matchit.zip'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -31,7 +36,7 @@ filetype plugin indent on    " required
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " import windows compatibility settings
-if has("win32")
+if has("win32") || has("win64")
 	source $VIMRUNTIME/mswin.vim
 endif
 
@@ -67,6 +72,11 @@ set hidden
 " don't wrap lines
 set nowrap
 
+" the encoding displayed
+set encoding=utf-8
+" the encoding written to file.
+set fileencoding=utf-8
+
 " large undo history
 set history=1000
 set undolevels=1000
@@ -76,10 +86,22 @@ set undolevels=1000
 " See http://vi.stackexchange.com/q/2801/1631
 let g:netrw_gx="<cWORD>"
 
+" highlight the line the cursor is in
+set cursorline
+
+" show whitespace characters
+" trail = show trailing whitespace at end of line
+" precedes/extends = these show when the line exceeds the buffer width causing horizontal scroll
+set list
+set listchars=tab:»\ ,trail:·,precedes:«,extends:»
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
+
+" set the visibility of whitespace characters to low
+let g:solarized_visibility="low"
 
 if has("gui_running")
 	if &diff
@@ -108,7 +130,7 @@ syntax on
 syntax enable
 
 if has("gui_running")
-	set guifont=Consolas:h11:cANSI
+	set guifont=DroidSansMonoForPowerline_NF:h11:cANSI
 	au GUIEnter * simalt ~x " maximize the window
 endif
 
@@ -192,6 +214,18 @@ map <C-n> :NERDTreeToggle<CR>
 " show hidden files
 let NERDTreeShowHidden=1
 
+" NERDTree git plugin icons
+let g:NERDTreeIndicatorMapCustom = {
+	\ "Modified"  : "✹",
+	\ "Staged"    : "✚",
+	\ "Untracked" : "✭",
+	\ "Renamed"   : "➜",
+	\ "Unmerged"  : "═",
+	\ "Deleted"   : "✖",
+	\ "Dirty"     : "✗",
+	\ "Clean"     : "✔︎",
+	\ "Unknown"   : "?"
+\ }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -211,9 +245,17 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " show current git branch
 let g:airline#extensions#branch#enabled = 1
+" enable icons when using a patched font
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick-scope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Git Gutter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 250ms update interval for detecting changes
+set updatetime=250
