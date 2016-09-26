@@ -172,8 +172,9 @@ nnoremap <Tab> >>
 " for insert mode
 inoremap <S-Tab> <C-d>
 
-" remap jj to escape in insert mode
+" escape key remaps
 inoremap jj <Esc>
+inoremap jk <Esc>
 
 " paste mode
 set pastetoggle=<F2>
