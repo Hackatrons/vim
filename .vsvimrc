@@ -57,3 +57,5 @@ inoremap jk <Esc>
 " jump to next error
 nnoremap <silent> q] :cnext<CR>
 nnoremap <silent> q[ :cprevious<CR>
+
+nnoremap gd :vsc Resharper.Resharper_GotoDeclaration<CR>
