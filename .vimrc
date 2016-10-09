@@ -199,7 +199,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <silent> q] :cnext<CR>
 nnoremap <silent> q[ :cprevious<CR>
 
-" map escape to clear highlighting from last search
+" map // to clear highlighting from last search
 nnoremap <silent> // :noh<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
