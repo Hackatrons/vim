@@ -26,6 +26,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'moll/vim-bbye'
+Plugin 'ervandew/supertab'
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()            " required
@@ -199,7 +200,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <silent> q] :cnext<CR>
 nnoremap <silent> q[ :cprevious<CR>
 
-" map escape to clear highlighting from last search
+" map // to clear highlighting from last search
 nnoremap <silent> // :noh<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -291,3 +292,12 @@ set updatetime=250
 " BByte (Buffer Bye)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>q :Bdelete<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto-pairs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" don't delete pairs with backspace
+let g:AutoPairsMapBS=0
+let g:AutoPairsMapCh=0
+" Default {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+let g:AutoPairs={'[':']', '{':'}'}
