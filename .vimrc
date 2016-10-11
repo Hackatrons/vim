@@ -82,6 +82,10 @@ set fileencoding=utf-8
 set history=1000
 set undolevels=1000
 
+" disable error bells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 " Use whole "words" when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
 " See http://vi.stackexchange.com/q/2801/1631
