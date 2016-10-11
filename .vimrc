@@ -73,6 +73,7 @@ set nowrap
 
 " the encoding displayed
 set encoding=utf-8
+
 " the encoding written to file.
 set fileencoding=utf-8
 
@@ -102,17 +103,7 @@ set path+=**
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
-
-if has("gui_running")
-	if &diff
-		" I prefer a light background for diffs
-		set background=light
-	else
-		set background=dark
-	endif
-else
-	set background=dark
-endif
+set background=dark
 
 " to fix an issue with highlighting in ConEmu
 " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
@@ -131,14 +122,15 @@ syntax enable
 
 if has("gui_running")
 	set guifont=Consolas:h11
-	au GUIEnter * simalt ~x " maximize the window
+	" maximize the window
+	au GUIEnter * simalt ~x
 endif
 
 " tab width = 4 spaces
 set tabstop=4
 set shiftwidth=4
 
-" set ode folding on indentation
+" set folding method on indentation
 set foldmethod=indent
 " expand all folds by default (up to 999 depth)
 set foldlevelstart=999
@@ -170,12 +162,9 @@ nnoremap ; :
 let mapleader = "\<space>"
 nmap , <space>
 
-" tab/shift tab for indentation
-" for command mode
-nnoremap <S-Tab> <<
-nnoremap <Tab> >>
-" for insert mode
-inoremap <S-Tab> <C-d>
+" Y by default acts like yy
+" make it yank until EOL, similar to D and C
+map Y y$
 
 " escape key remaps
 inoremap jj <Esc>
@@ -186,10 +175,12 @@ set pastetoggle=<F2>
 
 " backspace fix for ConEmu
 " https://github.com/Maximus5/ConEmu/issues/641
-inoremap <Char-0x07F> <BS>
-nnoremap <Char-0x07F> <BS>
+if !has("gui_running")
+	inoremap <Char-0x07F> <BS>
+	nnoremap <Char-0x07F> <BS>
+endif
 
-" Use ctrl-[hjkl] to select the active split!
+" Use ctrl-[hjkl] to select the active split
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
@@ -215,6 +206,7 @@ nnoremap <silent> // :noh<cr>
 
 " toggle key
 map <C-n> :NERDTreeToggle<CR>
+
 " show hidden files
 let NERDTreeShowHidden=1
 
