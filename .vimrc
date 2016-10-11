@@ -88,11 +88,15 @@ let g:netrw_gx="<cWORD>"
 " highlight the line the cursor is in
 set cursorline
 
-" show whitespace characters
+" whitespace characters
 " trail = show trailing whitespace at end of line
 " precedes/extends = these show when the line exceeds the buffer width causing horizontal scroll
 "set list
 set listchars=tab:»\ ,trail:·,precedes:«,extends:»
+
+" search down into subfolders
+" useful for :find
+set path+=**
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
@@ -206,8 +210,8 @@ nnoremap <silent> // :noh<cr>
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " open nerd tree if no files were specified when starting vim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " toggle key
 map <C-n> :NERDTreeToggle<CR>
