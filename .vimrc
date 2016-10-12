@@ -19,7 +19,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'unblevable/quick-scope'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'matchit.zip'
 Plugin 'airblade/vim-gitgutter'
@@ -107,7 +106,7 @@ set path+=**
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme solarized
+colorscheme gruvbox
 set background=dark
 
 " to fix an issue with highlighting in ConEmu
