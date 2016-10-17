@@ -25,6 +25,10 @@ set backspace=indent,eol,start
 " tab width = 4 spaces
 set tabstop=4
 set shiftwidth=4
+" disable error bells
+
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code
