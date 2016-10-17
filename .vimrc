@@ -108,6 +108,8 @@ set path+=**
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme gruvbox
 set background=dark
+" don't invert colours on visual selection
+let g:gruvbox_invert_selection=0
 
 " to fix an issue with highlighting in ConEmu
 " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
