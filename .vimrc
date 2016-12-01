@@ -103,6 +103,11 @@ set listchars=tab:»\ ,trail:·,precedes:«,extends:»
 " useful for :find
 set path+=**
 
+" the directory to use for swap files
+" ^= means to prepend the directory to the list of directories to use
+" // at the end means to use the file path name in the swap file to avoid filename collisions
+set directory^=$HOME/.vim/tmp//
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
