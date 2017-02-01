@@ -27,6 +27,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'moll/vim-bbye'
 Plugin 'ervandew/supertab'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'vimwiki/vimwiki.git'
+Plugin 'kshenoy/vim-signature'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
