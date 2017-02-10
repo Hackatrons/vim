@@ -337,3 +337,9 @@ function! AutoHighlightToggle()
   return 1
  endif
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimwiki configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" default binding is Ctrl+Space but for some reason it doesn't work reliably?
+map <Leader>tt <Plug>VimwikiToggleListItem
