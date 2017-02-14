@@ -25,10 +25,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'moll/vim-bbye'
-Plugin 'ervandew/supertab'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vimwiki/vimwiki.git'
 Plugin 'kshenoy/vim-signature'
+Plugin 'ajh17/VimCompletesMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -180,7 +180,6 @@ nmap , <space>
 map Y y$
 
 " escape key remaps
-inoremap jj <Esc>
 inoremap jk <Esc>
 
 " paste mode
@@ -341,5 +340,15 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimwiki configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" default binding is Ctrl+Space but for some reason it doesn't work reliably?
+" default mapping is <C-Space> (CTRL + Space) but for some reason it doesn't work
+" which might be because my leader key is Space
 map <Leader>tt <Plug>VimwikiToggleListItem
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto completion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
+" enable j and k to work with the autocomplete list
+inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
+inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
+inoremap <expr> <tab> pumvisible() ? "\<Cr>" : "<Cr>"
