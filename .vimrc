@@ -29,6 +29,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vimwiki/vimwiki.git'
 Plugin 'kshenoy/vim-signature'
 Plugin 'ajh17/VimCompletesMe'
+Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/AutoComplPop'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -180,7 +182,7 @@ nmap , <space>
 map Y y$
 
 " escape key remaps
-inoremap jk <Esc>
+inoremap <expr> jk pumvisible() ? "" : "<Esc>"
 
 " paste mode
 set pastetoggle=<F2>
@@ -347,8 +349,13 @@ map <Leader>tt <Plug>VimwikiToggleListItem
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
-" enable j and k to work with the autocomplete list
+" enable up arrow, down arrow, j, and k to work with the autocomplete list
 inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
-inoremap <expr> <tab> pumvisible() ? "\<Cr>" : "<Cr>"
+inoremap <expr> <Up> pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
+" hitting enter or tab will select the highlighted item from the autocomplete menu
+inoremap <expr> <tab> pumvisible() ? "\<C-y>" : "\<tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" close the autocomplete menu instead of exiting insert mode
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
