@@ -28,8 +28,6 @@ Plugin 'moll/vim-bbye'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vimwiki/vimwiki.git'
 Plugin 'kshenoy/vim-signature'
-Plugin 'ajh17/VimCompletesMe'
-Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/AutoComplPop'
 
 call vundle#end()            " required
@@ -350,8 +348,6 @@ map <Leader>tt <Plug>VimwikiToggleListItem
 " Auto completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " enable up arrow, down arrow, j, and k to work with the autocomplete list
-inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
 inoremap <expr> <Up> pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
 " hitting enter or tab will select the highlighted item from the autocomplete menu
