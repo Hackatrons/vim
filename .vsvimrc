@@ -25,6 +25,7 @@ set backspace=indent,eol,start
 " tab width = 4 spaces
 set tabstop=4
 set shiftwidth=4
+set expandtab
 " disable error bells
 
 set noerrorbells visualbell t_vb=
