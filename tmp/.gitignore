@@ -1,0 +1,4 @@
+# Empty directory to contain vim swap files
+*
+# Ignore everything except this file
+!.gitignore
