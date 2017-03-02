@@ -11,6 +11,12 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 vim +PluginInstall +qall
 ```
 
+#### Git Configuration
+Configure Git to use full VIM as the text editor instead of it's own:
+```sh
+git config --global core.editor "vim -f -i NONE"
+```
+
 ### Windows Installation
 PowerShell:
 ```powershell
@@ -25,7 +31,7 @@ vim +PluginInstall +qall
 
 TODO: fix issue where $env:HOME is null on some machines. Can't use "~/" because it may not be set and $HOME goes to the H: drive for my work PC :|
 
-#### Git for Windows Configuration
+#### Git Configuration
 Configure Git to use full VIM as the text editor instead of it's own:
 ```sh
 git config --global core.editor "'C:\Program Files (x86)\Vim\vim80\vim.exe' -f -i NONE"
