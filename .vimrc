@@ -12,16 +12,13 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
 Plugin 'matchit.zip'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'moll/vim-bbye'
@@ -160,12 +157,6 @@ set autoindent
 set cindent
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" EasyMotion
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" one leader key instead of two
-let g:EasyMotion_leader_key = '<Leader>'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map ; to : for quicker command execution e.g. ;e is faster to type than :e
@@ -290,12 +281,6 @@ endfunction
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Git Gutter
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 250ms update interval for detecting changes
-set updatetime=250
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BByte (Buffer Bye)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>q :Bdelete<CR>
@@ -309,9 +294,8 @@ let g:AutoPairsMapCh=0
 " Default {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
 let g:AutoPairs={'[':']', '{':'}'}
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto-pairs
+" Auto highlight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " http://vim.wikia.com/wiki/Auto_highlight_current_word_when_idle
 " Highlight all instances of word under cursor, when idle.
