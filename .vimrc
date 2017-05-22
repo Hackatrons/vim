@@ -107,6 +107,9 @@ set path+=**
 " // at the end means to use the file path name in the swap file to avoid filename collisions
 set directory^=$HOME/.vim/tmp//
 
+" auto set the working directory to the directory of the current file
+set autochdir
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
