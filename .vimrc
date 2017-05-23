@@ -27,6 +27,7 @@ Plugin 'vimwiki/vimwiki.git'
 Plugin 'kshenoy/vim-signature'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -80,16 +81,19 @@ set undolevels=1000
 
 " disable error bells
 set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
 
-" maximize the window when running a GUI
-autocmd GUIEnter * simalt ~x
-" remove the menubar
-set guioptions -=m
-" remove the toolbar
-set guioptions -=T
-" remove the scrollbar
-set guioptions -=r
+if has("gui_running")
+    " disable the bell
+    autocmd GUIEnter * set visualbell t_vb=
+    " maximize the window when running a GUI
+    autocmd GUIEnter * simalt ~x
+    " remove the menubar
+    set guioptions -=m
+    " remove the toolbar
+    set guioptions -=T
+    " remove the scrollbar
+    set guioptions -=r
+endif
 
 " Use whole "words" when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
@@ -376,3 +380,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" IndentLine configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_leadingSpaceEnabled = 1
