@@ -142,6 +142,8 @@ endif
 " tab width = 4 spaces
 set tabstop=4
 set shiftwidth=4
+" convert tabs to spaces
+set expandtab
 
 " set folding method on indentation
 set foldmethod=indent
