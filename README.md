@@ -1,5 +1,12 @@
 # VIM
 This repository contains my VIM settings.
+
+### VIM Installation
+Make sure the VIM build has LUA enabled for Neocomplete
+
+Windows build: https://tuxproject.de/projects/vim
+Linux build: TODO
+
 ### Linux Installation
 Bash:
 ```sh

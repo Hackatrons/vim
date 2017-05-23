@@ -25,7 +25,8 @@ Plugin 'moll/vim-bbye'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vimwiki/vimwiki.git'
 Plugin 'kshenoy/vim-signature'
-Plugin 'vim-scripts/AutoComplPop'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -61,9 +62,6 @@ set backspace=indent,eol,start
 set wildmenu
 set wildmode=list:longest,full
 
-" enable spell checking
-set spell spelllang=en_au
-
 " hide buffers instead of closing them
 set hidden
 
@@ -83,6 +81,15 @@ set undolevels=1000
 " disable error bells
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
+
+" maximize the window when running a GUI
+autocmd GUIEnter * simalt ~x
+" remove the menubar
+set guioptions -=m
+" remove the toolbar
+set guioptions -=T
+" remove the scrollbar
+set guioptions -=r
 
 " Use whole "words" when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
@@ -135,8 +142,6 @@ syntax enable
 
 if has("gui_running")
 	set guifont=Consolas:h11
-	" maximize the window
-	au GUIEnter * simalt ~x
 endif
 
 " tab width = 4 spaces
@@ -334,13 +339,40 @@ endfunction
 map <Leader>tt <Plug>VimwikiToggleListItem
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto completion
+" Neocomplete configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" enable up arrow, down arrow, j, and k to work with the autocomplete list
-inoremap <expr> <Up> pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
-" hitting enter or tab will select the highlighted item from the autocomplete menu
-inoremap <expr> <tab> pumvisible() ? "\<C-y>" : "\<tab>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-" close the autocomplete menu instead of exiting insert mode
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" select the first entry on tab
+inoremap <expr><TAB>  pumvisible() ? "\<C-y>" : "\<TAB>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 1
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
