@@ -28,6 +28,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'osyo-manga/vim-over'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
