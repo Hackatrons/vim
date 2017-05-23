@@ -124,6 +124,9 @@ set directory^=$HOME/.vim/tmp//
 " auto set the working directory to the directory of the current file
 set autochdir
 
+" limit history for 'browse oldfiles' to 10 files
+set viminfo='10
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
