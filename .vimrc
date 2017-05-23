@@ -29,6 +29,8 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'osyo-manga/vim-over'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
