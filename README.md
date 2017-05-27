@@ -2,10 +2,10 @@
 This repository contains my VIM settings.
 
 ### VIM Installation
-Make sure the VIM build has LUA enabled for Neocomplete
-
-Windows build: https://tuxproject.de/projects/vim
-Linux build: TODO
+* Make sure the VIM build has LUA enabled for Neocomplete.
+    * Windows build: https://tuxproject.de/projects/vim
+    * Linux build: TODO
+* Download and place the LUA binaries into the VIM installation folder: http://luabinaries.sourceforge.net/download.html
 
 ### Linux Installation
 Bash:
@@ -41,7 +41,7 @@ TODO: fix issue where $env:HOME is null on some machines. Can't use "~/" because
 #### Git Configuration
 Configure Git to use full VIM as the text editor instead of it's own:
 ```sh
-git config --global core.editor "'C:\Program Files (x86)\Vim\vim80\vim.exe' -f -i NONE"
+git config --global core.editor "'vim.exe' -f -i NONE"
 ```
 
 #### VsVim Configuration
