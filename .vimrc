@@ -349,7 +349,7 @@ endfunction
 map <Leader>tt <Plug>VimwikiToggleListItem
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Neocomplete configuration
+" Neocomplete/Autocomplete configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -367,6 +367,12 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " select the first entry on tab
 inoremap <expr><TAB>  pumvisible() ? "\<C-y>" : "\<TAB>"
+
+" close the popup on hitting enter and insert a new line
+function! s:my_cr_function()
+    return neocomplete#smart_close_popup() . "\<CR>"
+endfunction
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
