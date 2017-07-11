@@ -7,6 +7,12 @@ This repository contains my VIM settings.
     * Linux build: TODO
 * Download and place the LUA binaries into the VIM installation folder: http://luabinaries.sourceforge.net/download.html
 
+## Node Installation
+To use the `w0rp/ale` plugin which uses `eslint` install Node v8.1.3 or above and then:
+```sh
+npm install eslint eslint-plugin-react babel-eslint -g
+```
+
 ### Linux Installation
 Bash:
 ```sh

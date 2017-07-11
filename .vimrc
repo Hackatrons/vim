@@ -31,6 +31,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'osyo-manga/vim-over'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'pangloss/vim-javascript'
+Plugin 'w0rp/ale'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -397,3 +399,10 @@ endif
 " IndentLine configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_leadingSpaceEnabled = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ale configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline integration
+let g:airline#extensions#ale#enabled = 1
+" don't show the left hand sign column
+let g:ale_set_signs = 0
