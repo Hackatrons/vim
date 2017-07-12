@@ -222,6 +222,9 @@ nnoremap <silent> q[ :cprevious<CR>
 " map // to clear highlighting from last search
 nnoremap <silent> // :noh<cr>
 
+" leader yy = copy all to clipboard
+nnoremap <leader>yy :%y+<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
