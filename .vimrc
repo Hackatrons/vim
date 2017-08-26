@@ -1,14 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -33,16 +31,18 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'w0rp/ale'
+Plugin 'ap/vim-buftabline'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+" required
+filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " import windows compatibility settings
 if has("win32") || has("win64")
-	source $VIMRUNTIME/mswin.vim
+    source $VIMRUNTIME/mswin.vim
 endif
 
 " case insensitive searching
@@ -146,10 +146,10 @@ let g:gruvbox_invert_selection=0
 " to fix an issue with highlighting in ConEmu
 " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
 if !has("gui_running")
-	set term=xterm
-	set t_Co=256
-	let &t_AB="\e[48;5;%dm"
-	let &t_AF="\e[38;5;%dm"
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -159,7 +159,7 @@ syntax on
 syntax enable
 
 if has("gui_running")
-	set guifont=Consolas:h11
+    set guifont=Consolas:h11
 endif
 
 " tab width = 4 spaces
@@ -173,19 +173,16 @@ set foldmethod=indent
 " expand all folds by default (up to 999 depth)
 set foldlevelstart=999
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Code
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" disable automatic comment continuation
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 " retain indentation for new lines
 set autoindent
 " indent based on the code syntax (used in conjunction with autoindent)
 set cindent
 
+" disable automatic comment continuation
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
+" General Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map ; to : for quicker command execution e.g. ;e is faster to type than :e
 nnoremap ; :
@@ -207,8 +204,8 @@ set pastetoggle=<F2>
 " backspace fix for ConEmu
 " https://github.com/Maximus5/ConEmu/issues/641
 if !has("gui_running")
-	inoremap <Char-0x07F> <BS>
-	nnoremap <Char-0x07F> <BS>
+    inoremap <Char-0x07F> <BS>
+    nnoremap <Char-0x07F> <BS>
 endif
 
 " Use ctrl-[hjkl] to select the active split
@@ -231,15 +228,14 @@ nnoremap <silent> // :noh<cr>
 " leader yy = copy all to clipboard
 nnoremap <leader>yy :%y+<CR>
 
+" ctrl + backspace deletes previous word
+imap <C-BS> <C-W>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" open nerd tree if no files were specified when starting vim
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " toggle key
-map <C-n> :NERDTreeToggle<CR>
+map <C-o> :NERDTreeToggle<CR>
 
 " show hidden files
 let NERDTreeShowHidden=1
@@ -257,52 +253,52 @@ let g:ctrlp_show_hidden = 1
 set laststatus=2
 
 let g:lightline = {
-\	'colorscheme': 'wombat',
-\	'separator': { 'left': '', 'right': '' },
-\	'subseparator': { 'left': '|', 'right': '|' },
-\	'active': {
-\		'left': [
-\			[ 'mode', 'paste' ],
-\			[ 'fugitive', 'readonly', 'filename', ] ]
-\	},
-\	'component_function': {
-\		'fugitive': 'LightLineFugitive',
-\		'readonly': 'LightLineReadonly',
-\		'modified': 'LightLineModified',
-\		'filename': 'LightLineFilename'
-\	},
-\}
+            \	'colorscheme': 'wombat',
+            \	'separator': { 'left': '', 'right': '' },
+            \	'subseparator': { 'left': '|', 'right': '|' },
+            \	'active': {
+            \		'left': [
+            \			[ 'mode', 'paste' ],
+            \			[ 'fugitive', 'readonly', 'filename', ] ]
+            \	},
+            \	'component_function': {
+            \		'fugitive': 'LightLineFugitive',
+            \		'readonly': 'LightLineReadonly',
+            \		'modified': 'LightLineModified',
+            \		'filename': 'LightLineFilename'
+            \	},
+            \}
 
 function! LightLineModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
+    if &filetype == "help"
+        return ""
+    elseif &modified
+        return "+"
+    elseif &modifiable
+        return ""
+    else
+        return ""
+    endif
 endfunction
 
 function! LightLineReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "x"
-  else
-    return ""
-  endif
+    if &filetype == "help"
+        return ""
+    elseif &readonly
+        return "x"
+    else
+        return ""
+    endif
 endfunction
 
 function! LightLineFugitive()
-  return exists('*fugitive#head') ? fugitive#head() : ''
+    return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
 function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+                \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+                \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -334,22 +330,22 @@ let g:AutoPairs={'[':']', '{':'}'}
 " Type z/ to toggle highlighting on/off.
 nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 function! AutoHighlightToggle()
-   let @/ = ''
-   if exists('#auto_highlight')
-     au! auto_highlight
-     augroup! auto_highlight
-     setl updatetime=4000
-     echo 'Highlight current word: off'
-     return 0
-  else
-    augroup auto_highlight
-    au!
-    au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-    augroup end
-    setl updatetime=500
-    echo 'Highlight current word: ON'
-  return 1
- endif
+    let @/ = ''
+    if exists('#auto_highlight')
+        au! auto_highlight
+        augroup! auto_highlight
+        setl updatetime=4000
+        echo 'Highlight current word: off'
+        return 0
+    else
+        augroup auto_highlight
+            au!
+            au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+        augroup end
+        setl updatetime=500
+        echo 'Highlight current word: ON'
+        return 1
+    endif
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -401,13 +397,14 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IndentLine configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_leadingSpaceEnabled = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -415,3 +412,9 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:airline#extensions#ale#enabled = 1
 " don't show the left hand sign column
 let g:ale_set_signs = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buftabline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
