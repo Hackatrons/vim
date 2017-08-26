@@ -96,8 +96,14 @@ if has("gui_running")
     set guioptions -=m
     " remove the toolbar
     set guioptions -=T
-    " remove the scrollbar
+    " remove the right-hand scrollbar
     set guioptions -=r
+    " remove right-hand scrollbar when split
+    set guioptions -=R
+    " remove left-hand scrollbar
+    set guioptions -=L
+    " remove left-hand scrollbar when split
+    set guioptions -=l
 endif
 
 " Use whole "words" when opening URLs.
