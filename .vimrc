@@ -228,6 +228,9 @@ nnoremap <silent> // :noh<cr>
 " leader yy = copy all to clipboard
 nnoremap <leader>yy :%y+<CR>
 
+" fast way to set the current file mode to javascript as I regularly open files that don't have an extension
+nnoremap <leader>js :setf javascript<CR>
+
 " ctrl + backspace deletes previous word
 imap <C-BS> <C-W>
 
