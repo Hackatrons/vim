@@ -231,6 +231,9 @@ nnoremap <leader>yy :%y+<CR>
 " ctrl + backspace deletes previous word
 imap <C-BS> <C-W>
 
+" ctrl + delete deletes next word
+imap <C-Del> <C-O>dw
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
