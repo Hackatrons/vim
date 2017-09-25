@@ -42,7 +42,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " import windows compatibility settings
 if has("win32") || has("win64")
-	source $VIMRUNTIME/mswin.vim
+    source $VIMRUNTIME/mswin.vim
 endif
 
 " case insensitive searching
@@ -146,10 +146,10 @@ let g:gruvbox_invert_selection=0
 " to fix an issue with highlighting in ConEmu
 " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
 if !has("gui_running")
-	set term=xterm
-	set t_Co=256
-	let &t_AB="\e[48;5;%dm"
-	let &t_AF="\e[38;5;%dm"
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -159,7 +159,7 @@ syntax on
 syntax enable
 
 if has("gui_running")
-	set guifont=Consolas:h11
+    set guifont=Consolas:h11
 endif
 
 " tab width = 4 spaces
@@ -204,8 +204,8 @@ set pastetoggle=<F2>
 " backspace fix for ConEmu
 " https://github.com/Maximus5/ConEmu/issues/641
 if !has("gui_running")
-	inoremap <Char-0x07F> <BS>
-	nnoremap <Char-0x07F> <BS>
+    inoremap <Char-0x07F> <BS>
+    nnoremap <Char-0x07F> <BS>
 endif
 
 " Use ctrl-[hjkl] to select the active split
@@ -233,6 +233,10 @@ nnoremap <leader>js :setf javascript<CR>
 
 " ctrl + backspace deletes previous word
 imap <C-BS> <C-W>
+
+" ctrl + delete deletes next word
+imap <C-Del> <C-O>dw
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -272,35 +276,35 @@ let g:lightline = {
             \}
 
 function! LightLineModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
+    if &filetype == "help"
+        return ""
+    elseif &modified
+        return "+"
+    elseif &modifiable
+        return ""
+    else
+        return ""
+    endif
 endfunction
 
 function! LightLineReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "x"
-  else
-    return ""
-  endif
+    if &filetype == "help"
+        return ""
+    elseif &readonly
+        return "x"
+    else
+        return ""
+    endif
 endfunction
 
 function! LightLineFugitive()
-  return exists('*fugitive#head') ? fugitive#head() : ''
+    return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
 function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+                \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+                \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -332,22 +336,22 @@ let g:AutoPairs={'[':']', '{':'}'}
 " Type z/ to toggle highlighting on/off.
 nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 function! AutoHighlightToggle()
-   let @/ = ''
-   if exists('#auto_highlight')
-     au! auto_highlight
-     augroup! auto_highlight
-     setl updatetime=4000
-     echo 'Highlight current word: off'
-     return 0
-  else
-    augroup auto_highlight
-    au!
-    au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-    augroup end
-    setl updatetime=500
-    echo 'Highlight current word: ON'
-  return 1
- endif
+    let @/ = ''
+    if exists('#auto_highlight')
+        au! auto_highlight
+        augroup! auto_highlight
+        setl updatetime=4000
+        echo 'Highlight current word: off'
+        return 0
+    else
+        augroup auto_highlight
+            au!
+            au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+        augroup end
+        setl updatetime=500
+        echo 'Highlight current word: ON'
+        return 1
+    endif
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -399,7 +403,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
