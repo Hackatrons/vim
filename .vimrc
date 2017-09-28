@@ -18,7 +18,6 @@ Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
 Plugin 'matchit.zip'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'moll/vim-bbye'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vimwiki/vimwiki.git'
@@ -317,15 +316,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " BByte (Buffer Bye)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>q :Bdelete<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto-pairs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" don't delete pairs with backspace
-let g:AutoPairsMapBS=0
-let g:AutoPairsMapCh=0
-" Default {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
-let g:AutoPairs={'[':']', '{':'}'}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto highlight
