@@ -31,6 +31,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'w0rp/ale'
 Plugin 'ap/vim-buftabline'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()
 " required
@@ -414,3 +415,11 @@ let g:ale_set_signs = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-easy-align
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
