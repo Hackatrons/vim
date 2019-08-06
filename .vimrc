@@ -135,6 +135,9 @@ set autochdir
 " limit history for 'browse oldfiles' to 10 files
 set viminfo='10
 
+" don't conceal text. e.g. urls in markdown
+set conceallevel=0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -423,3 +426,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Temp macros for NGA
+let @q='^i<web title="A"></web>j'
