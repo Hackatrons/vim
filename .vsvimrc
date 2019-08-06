@@ -1,8 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin indent on
-
 " case insensitive searching
 set smartcase
 set ignorecase
@@ -10,34 +8,13 @@ set ignorecase
 " incremental search while typing
 set incsearch
 
-" enable line numbers
-set number
-
-" highlight matching braces, brackets, etc
-set showmatch
-
-" enable row/col ruler
-set ruler
-
-" allow backspace to delete these characters
+" Allow backspace to delete these characters
 set backspace=indent,eol,start
 
 " tab width = 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
-" disable error bells
-
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Code
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" retain indentation for new lines
-set autoindent
-" indent based on the code syntax (used in conjunction with autoindent)
-set cindent
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
