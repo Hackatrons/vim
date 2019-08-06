@@ -135,9 +135,6 @@ set autochdir
 " limit history for 'browse oldfiles' to 10 files
 set viminfo='10
 
-" don't conceal text. e.g. urls in markdown
-set conceallevel=0
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -404,6 +401,7 @@ endif
 " IndentLine configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_setConceal = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale configuration
