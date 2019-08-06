@@ -37,7 +37,13 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 
 " jump to next error
-nnoremap <silent> q] :cnext<CR>
-nnoremap <silent> q[ :cprevious<CR>
+nnoremap q] :cnext<CR>
+nnoremap q[ :cprevious<CR>
 
-nnoremap gd :vsc Resharper.Resharper_GotoDeclaration<CR>
+" note gd is already implemented natively in vsvim
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap gp :vsc Edit.PeekDefinition<CR>
+
+nnoremap gb :vsc View.NavigateBackward<CR>
+nnoremap gf :vsc View.NavigateForward<CR>
