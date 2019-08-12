@@ -49,3 +49,8 @@ cmd /c mklink %HOME%\.vsvimrc %HOME%\.vim\.vsvimrc
 In Visual Studio:
 1. Tools -> Options -> VsVim
 2. Change "VimRc File Loading" to vsvimrc files only
+
+# Plugin installation steps
+
+markdown-preview-nvim:
+1. Run this inside of Vim: ```call mkdp#util#install()```
