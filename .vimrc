@@ -1,45 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'unblevable/quick-scope'
-Plugin 'tpope/vim-fugitive'
-Plugin 'matchit.zip'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'moll/vim-bbye'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vimwiki/vimwiki.git'
-Plugin 'kshenoy/vim-signature'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'osyo-manga/vim-over'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'pangloss/vim-javascript'
-Plugin 'w0rp/ale'
-Plugin 'ap/vim-buftabline'
-Plugin 'junegunn/vim-easy-align'
-
-call vundle#end()
-" required
-filetype plugin indent on
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins are loading using the Vim pack feature
 " import windows compatibility settings
 if has("win32") || has("win64")
     source $VIMRUNTIME/mswin.vim
