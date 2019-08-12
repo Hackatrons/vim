@@ -2,10 +2,8 @@
 This repository contains my VIM settings.
 
 ## Node Installation
-To use the `w0rp/ale` plugin which uses `eslint` install Node v8.1.3 or above and then:
-```sh
-npm install eslint eslint-plugin-react babel-eslint -g
-```
+Install NodeJS for w0rp/ale.
+https://nodejs.org/en/download/
 
 ### Linux Installation
 Bash:
@@ -51,6 +49,11 @@ In Visual Studio:
 2. Change "VimRc File Loading" to vsvimrc files only
 
 # Plugin installation steps
+
+w0rp/ale:
+```sh
+npm install eslint eslint-plugin-react babel-eslint -g
+```
 
 markdown-preview-nvim:
 1. Run this inside of Vim: ```call mkdp#util#install()```
