@@ -1,12 +1,6 @@
 # VIM
 This repository contains my VIM settings.
 
-### VIM Installation
-* Make sure the VIM build has LUA enabled for Neocomplete.
-    * Windows build: https://tuxproject.de/projects/vim
-    * Linux build: TODO
-* Download and place the LUA binaries into the VIM installation folder: http://luabinaries.sourceforge.net/download.html
-
 ## Node Installation
 To use the `w0rp/ale` plugin which uses `eslint` install Node v8.1.3 or above and then:
 ```sh
@@ -21,7 +15,6 @@ cd ~/.vim
 git submodule init
 git submodule update
 ln -s ~/.vim/.vimrc ~/.vimrc
-vim +PluginInstall +qall
 ```
 
 #### Git Configuration
@@ -37,9 +30,8 @@ git clone git@gitlab.com:DanielHack/vim.git $env:HOME\.vim
 cd $env:HOME\.vim
 git submodule init
 git submodule update
-cmd /c mklink %HOME%\.vimrc %HOME%\.vim\.vimrc
-cmd /c mklink /D %HOME%\vimfiles %HOME%\.vim
-vim +PluginInstall +qall
+cmd /c mklink "%USERPROFILE%\.vimrc" "%USERPROFILE%\.vim\.vimrc"
+cmd /c mklink /D "%USERPROFILE%\vimfiles" "%USERPROFILE%\.vim"
 ```
 
 TODO: fix issue where $env:HOME is null on some machines. Can't use "~/" because it may not be set and $HOME goes to the H: drive for my work PC :|
