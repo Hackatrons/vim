@@ -61,3 +61,9 @@
 [submodule "pack/plugins/start/markdown-preview.nvim"]
 	path = pack/plugins/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "pack/plugins/start/palenight.vim"]
+	path = pack/plugins/start/palenight.vim
+	url = https://github.com/drewtempelmeyer/palenight.vim
+[submodule "pack/plugins/opt/palenight.vim"]
+	path = pack/plugins/opt/palenight.vim
+	url = https://github.com/drewtempelmeyer/palenight.vim

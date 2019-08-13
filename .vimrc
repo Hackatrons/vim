@@ -97,10 +97,10 @@ set viminfo='10
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme gruvbox
 set background=dark
-" don't invert colours on visual selection
-let g:gruvbox_invert_selection=0
+" load palenight
+packadd! palenight.vim
+colorscheme palenight
 
 " to fix an issue with highlighting in ConEmu
 " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
@@ -110,7 +110,6 @@ if !has("gui_running")
     let &t_AB="\e[48;5;%dm"
     let &t_AF="\e[38;5;%dm"
 endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Styling/Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -216,9 +215,8 @@ let g:ctrlp_cmd = 'CtrlP'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show lightline even when only single file is open
 set laststatus=2
-
 let g:lightline = {
-            \	'colorscheme': 'wombat',
+            \	'colorscheme': 'palenight',
             \	'separator': { 'left': '', 'right': '' },
             \	'subseparator': { 'left': '|', 'right': '|' },
             \	'active': {
