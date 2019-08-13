@@ -57,3 +57,10 @@ npm install eslint eslint-plugin-react babel-eslint -g
 
 markdown-preview-nvim:
 1. Run this inside of Vim: ```call mkdp#util#install()```
+
+coc.vim:
+```sh
+mkdir -p ~/.vim/pack/plugins/start/coc
+cd ~/.vim/pack/plugins/start/coc
+curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -h
+```
