@@ -94,6 +94,10 @@ set autochdir
 " limit history for 'browse oldfiles' to 10 files
 set viminfo='10
 
+" for gVim on windows, requires placing gvimfullscreen.dll in the vim installation folder
+" https://github.com/derekmcloughlin/gvimfullscreen_win32/tree/master
+map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
