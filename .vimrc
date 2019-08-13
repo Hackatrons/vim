@@ -98,6 +98,9 @@ set viminfo='10
 " https://github.com/derekmcloughlin/gvimfullscreen_win32/tree/master
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
+" set the bottom command bar height to the minimum
+set cmdheight=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -449,6 +452,8 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <a-cr>  <Plug>(coc-codeaction)
+
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
