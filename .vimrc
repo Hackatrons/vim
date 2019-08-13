@@ -215,6 +215,8 @@ let g:ctrlp_cmd = 'CtrlP'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show lightline even when only single file is open
 set laststatus=2
+" hide the inbuilt mode display
+set noshowmode
 let g:lightline = {
             \	'colorscheme': 'palenight',
             \	'separator': { 'left': '', 'right': '' },
