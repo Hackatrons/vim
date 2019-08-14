@@ -10,8 +10,7 @@ Bash:
 ```sh
 git clone git@gitlab.com:DanielHack/vim.git ~/.vim
 cd ~/.vim
-git submodule init
-git submodule update
+git submodule update --init --recursive
 ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 
@@ -26,8 +25,7 @@ PowerShell:
 ```powershell
 git clone git@gitlab.com:DanielHack/vim.git $env:HOME\.vim
 cd $env:HOME\.vim
-git submodule init
-git submodule update
+git submodule update --init --recursive
 cmd /c mklink "%USERPROFILE%\.vimrc" "%USERPROFILE%\.vim\.vimrc"
 cmd /c mklink /D "%USERPROFILE%\vimfiles" "%USERPROFILE%\.vim"
 ```
