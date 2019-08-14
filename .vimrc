@@ -98,6 +98,9 @@ set viminfo='10
 " https://github.com/derekmcloughlin/gvimfullscreen_win32/tree/master
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
+" required for NerdCommentor to know what type of comment characters to use
+filetype plugin on
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,15 +241,19 @@ let g:lightline = {
             \	'active': {
             \		'left': [
             \			[ 'mode', 'paste' ],
-            \			[ 'fugitive', 'readonly', 'filename', ] ]
+            \			[ 'cocstatus', 'fugitive', 'readonly', 'filename', ] ]
             \	},
             \	'component_function': {
             \		'fugitive': 'LightLineFugitive',
             \		'readonly': 'LightLineReadonly',
             \		'modified': 'LightLineModified',
             \		'filename': 'LightLineFilename',
+            \       'cocstatus': 'coc#status',
             \	},
             \}
+
+" Use auocmd to force lightline update.
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 function! LightLineModified()
     if &filetype == "help"
