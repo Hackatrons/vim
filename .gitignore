@@ -1,5 +1,4 @@
 /.netrwhist
 /bundle
 /tmp
-
-pack
+/pack/plugins/start/coc
