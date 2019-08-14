@@ -55,3 +55,4 @@
 [submodule "pack/plugins/start/vim-colorschemes"]
 	path = pack/plugins/start/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes
+	ignore = dirty
