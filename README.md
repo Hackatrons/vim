@@ -58,19 +58,19 @@ In Visual Studio:
 1. Tools -> Options -> VsVim
 2. Change "VimRc File Loading" to vsvimrc files only
 
-# Plugin Installation
-## w0rp/ale
+## Plugin Installation
+### w0rp/ale
 ```sh
 npm install eslint eslint-plugin-react babel-eslint -g
 ```
 
-## markdown-preview-nvim
+### markdown-preview-nvim
 1. Run this inside of Vim
 ```
 :call mkdp#util#install()
 ```
 
-## coc.vim
+### coc.vim
 
 **Windows (PowerShell)**
 ```powershell
