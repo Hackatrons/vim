@@ -442,3 +442,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-json', 'coc-css', 'coc-omnisharp' ]
+
+" the default red text for errors is too harsh, lighten it a bit
+hi CocErrorSign  ctermfg=Red guifg=#ff1c1c
