@@ -25,6 +25,10 @@ nnoremap ; :
 " set leader key
 let mapleader = "\<space>"
 
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :tabnew ~/.vsvimrc<CR>
+nmap <silent> <leader>sv :so ~/.vsvimrc<CR>
+
 " tab/shift tab for indentation
 " for command mode
 nnoremap <S-Tab> <<
