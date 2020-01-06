@@ -109,19 +109,25 @@ set background=dark
 packadd! palenight.vim
 colorscheme palenight
 
-" to fix an issue with highlighting in ConEmu
-" https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
-if !has("gui_running")
+" Conemu setup
+if !empty($CONEMUHOOKS)
+    " to fix an issue with highlighting in ConEmu
+    " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
     set term=xterm
     set t_Co=256
     let &t_AB="\e[48;5;%dm"
     let &t_AF="\e[38;5;%dm"
-    " mouse scrol fixes
+    " mouse scroll fixes
     " https://github.com/Maximus5/ConEmu/issues/1007
     inoremap <Esc>[62~ <C-X><C-E>
     inoremap <Esc>[63~ <C-X><C-Y>
     nnoremap <Esc>[62~ <C-E>
     nnoremap <Esc>[63~ <C-Y>
+
+    " fix backspace key
+    " https://github.com/Maximus5/ConEmu/issues/1900
+    let &t_kb="\xcex"
+    let &t_kD="\xceS"
 endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Styling/Formatting
