@@ -174,6 +174,7 @@ map Y y$
 
 " escape key remaps
 inoremap <expr> jk pumvisible() ? "" : "<Esc>"
+inoremap <expr> kj pumvisible() ? "" : "<Esc>"
 
 " paste mode
 set pastetoggle=<F2>
