@@ -81,14 +81,17 @@ cd ~/.vim/pack/plugins/start/coc
 wget https://github.com/neoclide/coc.nvim/archive/release.zip -OutFile release.zip
 Expand-Archive .\release.zip -DestinationPath coc
 mv .\coc\coc.nvim-release\* .
-rmdir coc -Recurse
+rmdir coc.nvim-release -Recurse
+rm release.zip
 ```
 
 **Linux (bash)**
 ```bash
 mkdir -p ~/.vim/pack/plugins/start/coc
 cd ~/.vim/pack/plugins/start/coc
-curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -h
-mv .\coc.nvim-release\* .\coc
-rm -rf .\coc
+curl --remote-name --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz
+tar xzfv release.tar.gz
+mv ./coc.nvim-release/* .
+rm -rf ./coc.nvim-release
+rm release.tar.gz
 ```
