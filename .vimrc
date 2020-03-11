@@ -14,6 +14,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	endif
 endif
 
+function! BuildCoc(info)
+    " coc doesn't work with powershell, only cmd
+    set shell=cmd
+    call coc#util#install()
+endfunction
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
@@ -36,7 +42,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }}
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
+Plug 'neoclide/coc.nvim', {'do': function('BuildCoc')}
 
 call plug#end()
 
