@@ -1,0 +1,10 @@
+{
+    "diagnostic.errorSign": "E",
+    "diagnostic.warningSign": "W",
+    "diagnostic.infoSign": "I",
+    "diagnostic.hintSign": "H",
+    "markdownlint.config": {
+        "default": true,
+        "line_length": false
+    }
+}
