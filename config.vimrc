@@ -205,6 +205,7 @@ nnoremap <silent> q] :cnext<CR>
 nnoremap <silent> q[ :cprevious<CR>
 
 " map // to clear highlighting from last search
+set nohlsearch
 nnoremap <silent> // :noh<cr>
 
 " leader yy = copy all to clipboard
