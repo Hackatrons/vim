@@ -47,6 +47,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'do': function('BuildCoc')}
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
