@@ -3,6 +3,11 @@
     "diagnostic.warningSign": "W",
     "diagnostic.infoSign": "I",
     "diagnostic.hintSign": "H",
+
+    "suggest.maxCompleteItemCount": 10,
+    "suggest.noselect": false,
+    "suggest.removeDuplicateItems": true,
+
     "markdownlint.config": {
         "default": true,
         "line_length": false
