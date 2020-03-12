@@ -12,3 +12,6 @@ npm cache clean -f
 
 # install vim
 yum install vim -y
+
+# symlink so vim can find our configuration files
+ln -s ~/.vim/.vimrc ~/.vimrc

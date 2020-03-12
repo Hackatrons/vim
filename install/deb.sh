@@ -13,3 +13,6 @@ npm cache clean -f
 
 # install vim
 apt-get install vim -y
+
+# symlink so vim can find our configuration files
+ln -s ~/.vim/.vimrc ~/.vimrc
