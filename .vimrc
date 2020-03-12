@@ -15,8 +15,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 function! BuildCoc(info)
-    " coc doesn't work with powershell, only cmd
-    set shell=cmd
+	if has("win32") || has("win64")
+        " coc doesn't work with powershell, only cmd
+        set shell=cmd
+    endif
+
     call coc#util#install()
 endfunction
 
