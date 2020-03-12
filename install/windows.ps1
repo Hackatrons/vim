@@ -5,7 +5,7 @@ function refresh-path {
                 [System.Environment]::GetEnvironmentVariable("Path","User")
 }
 # enable tls 1.2
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
 
 # install chocolately
 Set-ExecutionPolicy Bypass -Scope Process -Force;
@@ -22,10 +22,6 @@ refresh-path
 
 # install node packages
 npm install eslint eslint-plugin-react babel-eslint -g
-
-# update any existing packages
-npm install npm@latest -g
-npm cache clean -f
 
 # install vim
 cinst vim -y
