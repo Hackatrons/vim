@@ -192,6 +192,7 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ec :e ~/.vim/config.vimrc<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " jump to next error
