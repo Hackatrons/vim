@@ -46,6 +46,7 @@ Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }}
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'do': function('BuildCoc')}
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 

@@ -470,3 +470,9 @@ let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-json', 'coc
 
 " the default red text for errors is too harsh, lighten it a bit
 hi CocErrorSign  ctermfg=Red guifg=#ff1c1c
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" omnisharp
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the stdio version of OmniSharp-roslyn:
+let g:OmniSharp_server_stdio = 1
