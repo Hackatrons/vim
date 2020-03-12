@@ -216,6 +216,10 @@ imap <C-BS> <C-W>
 " ctrl + delete deletes next word
 imap <C-Del> <C-O>dw
 
+" navigate back and forward
+nnoremap gf <c-i>
+nnoremap gb <c-o>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
