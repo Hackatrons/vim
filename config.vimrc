@@ -108,7 +108,7 @@ set background=dark
 colorscheme palenight
 
 " Conemu setup
-if !empty($CONEMUHOOKS)
+if !has('nvim') && !empty($CONEMUHOOKS)
     " to fix an issue with highlighting in ConEmu
     " https://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
     set term=xterm
@@ -127,6 +127,11 @@ if !empty($CONEMUHOOKS)
     let &t_kb="\xcex"
     let &t_kD="\xceS"
 endif
+
+if has('nvim')
+    set termguicolors
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Styling/Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -258,7 +263,7 @@ let g:lightline = {
             \	},
             \}
 
-" Use auocmd to force lightline update.
+" Use autocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 function! LightLineModified()
