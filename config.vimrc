@@ -220,6 +220,9 @@ imap <C-Del> <C-O>dw
 nnoremap gf <c-i>
 nnoremap gb <c-o>
 
+" bind escape to get back into normal mode when in a terminal window
+tnoremap <Esc> <C-\><C-n>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
