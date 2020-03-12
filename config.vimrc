@@ -358,13 +358,8 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Use <Tab> to confirm autocomplete
+inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
 
 " alt j and k for moving up and down the autocomplete menu
 inoremap <silent><expr> <A-j>
