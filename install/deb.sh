@@ -12,3 +12,8 @@ apt-get install vim -y
 
 # symlink so vim can find our configuration files
 ln -s ~/.vim/.vimrc ~/.vimrc
+
+# neovim
+mkdir -p ~/.config/nvim/
+ln -s ~/.vim/.nvimrc ~/.config/nvim/init.vim
+ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json

@@ -29,4 +29,9 @@ cinst vim -y
 # symlink so vim can find our configuration files
 cmd /c mklink "%USERPROFILE%\.vimrc" "%USERPROFILE%\.vim\.vimrc"
 cmd /c mklink /D "%USERPROFILE%\vimfiles" "%USERPROFILE%\.vim"
-cmd /c mklink %USERPROFILE%\.vsvimrc %USERPROFILE%\.vim\.vsvimrc
+cmd /c mklink "%USERPROFILE%\.vsvimrc" "%USERPROFILE%\.vim\.vsvimrc"
+
+# neovim
+cmd /c mkdir "%USERPROFILE%\AppData\Local\nvim"
+cmd /c mklink "%USERPROFILE%\AppData\Local\nvim\init.vim" "%USERPROFILE%\.vim\.nvimrc"
+cmd /c mklink "%USERPROFILE%\AppData\Local\nvim\coc-settings.json" "%USERPROFILE%\.vim\coc-settings.json"
