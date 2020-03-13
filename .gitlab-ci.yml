@@ -1,0 +1,11 @@
+image: mcr.microsoft.com/dotnet/core/sdk
+
+stages:
+    - test
+
+test:
+    stage: build
+    script:
+        - ls /
+        - whoami
+        - cat /etc/passwd
