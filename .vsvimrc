@@ -51,3 +51,6 @@ nnoremap gp :vsc Edit.PeekDefinition<CR>
 
 nnoremap gb :vsc View.NavigateBackward<CR>
 nnoremap gf :vsc View.NavigateForward<CR>
+
+nnoremap <leader>td :vsc TestExplorer.DebugLastRun<CR>
+nnoremap <leader>ta :vsc TestExplorer.DebugAllTests<CR>
