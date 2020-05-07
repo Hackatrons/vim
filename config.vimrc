@@ -325,6 +325,12 @@ let g:ale_set_signs = 0
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
+" hide the gui tab line as it doesn't seem to work well in nvim-qt
+if has('nvim')
+    autocmd VimEnter * GuiPopupmenu 0
+    autocmd VimEnter * GuiTabline 0
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-easy-align
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
