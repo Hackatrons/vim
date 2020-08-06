@@ -419,13 +419,8 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <a-cr>  <Plug>(coc-codeaction)
+" show code actions for current line
+nmap <a-cr>  v<Plug>(coc-codeaction-selected)
 
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
