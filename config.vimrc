@@ -102,6 +102,9 @@ map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 " required for NerdCommentor to know what type of comment characters to use
 filetype plugin on
 
+" enable mouse interaction
+set mouse=a
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
