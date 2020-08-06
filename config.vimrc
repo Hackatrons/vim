@@ -104,8 +104,7 @@ filetype plugin on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colour Scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
-colorscheme palenight
+colorscheme codedark
 
 " Conemu setup
 if !has('nvim') && !empty($CONEMUHOOKS)
@@ -314,10 +313,6 @@ nnoremap <Leader>qq :Bdelete<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airline integration
-let g:airline#extensions#ale#enabled = 1
-" don't show the left hand sign column
-
 let g:ale_linters = { 'cs': ['OmniSharp'] }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
