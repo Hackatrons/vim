@@ -4,9 +4,10 @@
     "diagnostic.infoSign": "I",
     "diagnostic.hintSign": "H",
 
-    "suggest.maxCompleteItemCount": 10,
+    "suggest.maxCompleteItemCount": 20,
     "suggest.noselect": false,
     "suggest.removeDuplicateItems": true,
+    "suggest.disableMenu": false,
 
     "markdownlint.config": {
         "default": true,

@@ -24,6 +24,7 @@ set backspace=indent,eol,start
 
 " full menu for command tab completion
 set wildmenu
+set wildignorecase
 set wildmode=list:longest,full
 
 " hide buffers instead of closing them
@@ -320,10 +321,13 @@ nnoremap <Leader>qq :Bdelete<CR>
 let g:ale_linters = { 'cs': ['OmniSharp'] }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Buftabline
+" Buffer management
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+
+" bring up a switch buffer menu
+nnoremap <Leader>b :ls<CR>:b<Space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-easy-align
