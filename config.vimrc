@@ -356,13 +356,20 @@ set shortmess+=c
 set signcolumn=yes
 
 " Use <Tab> to confirm autocomplete
-inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+"inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 " alt j and k for moving up and down the autocomplete menu
 inoremap <silent><expr> <A-j>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
 inoremap <expr><A-k> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -391,7 +398,7 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Show signature help while editing
-autocmd CursorHoldI * silent! call CocAction('showSignatureHelp')
+autocmd CursorHoldI * silent! call CocActionAsync('showSignatureHelp')
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -460,10 +467,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-json', 'coc-css', 'coc-omnisharp', 'coc-markdownlint', 'coc-omnisharp' ]
-
-" the default red text for errors is too harsh, lighten it a bit
-hi CocErrorSign  ctermfg=Red guifg=#ff1c1c
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-json', 'coc-css', 'coc-omnisharp', 'coc-markdownlint', 'coc-omnisharp', 'coc-snippets' ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " omnisharp
@@ -506,3 +510,6 @@ augroup omnisharp_commands
     autocmd FileType cs nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
     autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
 augroup END
+
+" override codedark from colouring the entire error red
+hi error guibg=#1e1e1e
