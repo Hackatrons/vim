@@ -3,7 +3,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	if has("win32") || has("win64")
 		set shell=powershell
 		silent !New-Item -ItemType Directory -Force -Path ~/.vim/autoload
-		silent !iwr https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -OutFile ~/.vim/autoload/plug.vim
+		silent !(iwr https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -OutFile ~/.vim/autoload/plug.vim)
 	else
 		silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	endif
