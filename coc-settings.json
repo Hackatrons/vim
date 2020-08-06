@@ -7,7 +7,7 @@
     "suggest.maxCompleteItemCount": 20,
     "suggest.noselect": false,
     "suggest.removeDuplicateItems": true,
-    "suggest.disableMenu": false,
+    "suggest.disableMenu": true,
 
     "markdownlint.config": {
         "default": true,
