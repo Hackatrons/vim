@@ -347,22 +347,20 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" Use <Tab> to confirm autocomplete
-"inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+" enter to confirm selection
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" remap for complete to use tab and <cr>
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+    \ coc#pum#visible() ? coc#pum#next(0):
+    \ <SID>check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
 
-" alt j and k for moving up and down the autocomplete menu
-inoremap <silent><expr> <A-j>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" shift tab to select previous suggestion
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(0) : "\<C-h>"
 
-inoremap <expr><A-k> pumvisible() ? "\<C-p>" : "\<C-h>"
+" control spacebar to show suggestions
+inoremap <silent><expr> <c-space> coc#refresh()
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -370,11 +368,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
