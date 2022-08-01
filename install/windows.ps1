@@ -21,7 +21,7 @@ cinst nodejs.install -y
 refresh-path
 
 # install node packages
-npm install eslint eslint-plugin-react babel-eslint -g
+npm install eslint eslint-plugin-react babel-eslint yarn -g
 
 # install vim
 cinst vim -y
