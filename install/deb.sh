@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install node
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # install node packages
