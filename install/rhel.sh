@@ -4,7 +4,7 @@
 curl -sL https://rpm.nodesource.com/setup_current.x | bash -
 
 # install node packages
-npm install eslint eslint-plugin-react babel-eslint -g
+npm install eslint eslint-plugin-react babel-eslint yarn -g
 
 # install vim
 yum install vim -y
