@@ -74,10 +74,8 @@ let g:netrw_gx="<cWORD>"
 set cursorline
 
 " whitespace characters
-" trail = show trailing whitespace at end of line
-" precedes/extends = these show when the line exceeds the buffer width causing horizontal scroll
-"set list
-set listchars=tab:»\ ,trail:·,precedes:«,extends:»
+set list
+set listchars+=tab:\ \ ┊,lead:.,trail:.
 
 " search down into subfolders
 " useful for :find
