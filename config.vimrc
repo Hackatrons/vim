@@ -81,21 +81,11 @@ set listchars+=tab:\ \ ┊,lead:.,trail:.
 " useful for :find
 set path+=**
 
-" the directory to use for swap files
-" ^= means to prepend the directory to the list of directories to use
-" // at the end means to use the file path name in the swap file to avoid filename collisions
-call mkdir($HOME . "/.vim/tmp/", "p")
-set directory^=$HOME/.vim/tmp//
-
 " auto set the working directory to the directory of the current file
 set autochdir
 
 " limit history for 'browse oldfiles' to 10 files
 set viminfo='10
-
-" for gVim on windows, requires placing gvimfullscreen.dll in the vim installation folder
-" https://github.com/derekmcloughlin/gvimfullscreen_win32/tree/master
-map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
 " required for NerdCommentor to know what type of comment characters to use
 filetype plugin on
