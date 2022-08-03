@@ -8,18 +8,18 @@ let g:lightline = {
             \	'separator': { 'left': '', 'right': '' },
             \	'subseparator': { 'left': '|', 'right': '|' },
             \	'active': {
-            \		'left': [
-            \			[ 'mode', 'paste' ],
-            \			[ 'cocstatus', 'fugitive', 'readonly', 'filename', ] ]
-            \	},
-            \	'component_function': {
-            \		'fugitive': 'LightLineFugitive',
-            \		'readonly': 'LightLineReadonly',
-            \		'modified': 'LightLineModified',
-            \		'filename': 'LightLineFilename',
-            \       'cocstatus': 'coc#status',
-            \	},
-            \}
+                \		'left': [
+                    \			[ 'mode', 'paste' ],
+                    \			[ 'cocstatus', 'fugitive', 'readonly', 'filename', ] ]
+                    \	},
+                    \	'component_function': {
+                        \		'fugitive': 'LightLineFugitive',
+                        \		'readonly': 'LightLineReadonly',
+                        \		'modified': 'LightLineModified',
+                        \		'filename': 'LightLineFilename',
+                        \       'cocstatus': 'coc#status',
+                        \	},
+                        \}
 
 " Use autocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()

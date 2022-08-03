@@ -19,9 +19,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<C
 
 " remap for complete to use tab and <cr>
 inoremap <silent><expr> <TAB>
-    \ coc#pum#visible() ? coc#pum#next(0):
-    \ <SID>check_back_space() ? "\<Tab>" :
-    \ coc#refresh()
+            \ coc#pum#visible() ? coc#pum#next(0):
+            \ <SID>check_back_space() ? "\<Tab>" :
+            \ coc#refresh()
 
 " shift tab to select previous suggestion
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(0) : "\<C-h>"
@@ -30,8 +30,8 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(0) : "\<C-h>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use `[c` and `]c` to navigate diagnostics
@@ -51,11 +51,11 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 autocmd CursorHoldI * silent! call CocActionAsync('showSignatureHelp')
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 " Highlight symbol under cursor on CursorHold
@@ -69,11 +69,11 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " show code actions for current line
