@@ -14,22 +14,11 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" enter to confirm selection
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" remap for complete to use tab and <cr>
-inoremap <silent><expr> <TAB>
-            \ coc#pum#visible() ? coc#pum#confirm():
-            \ <SID>check_back_space() ? "\<Tab>" :
-            \ coc#refresh()
+" tab to confirm selection
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 
 " control spacebar to show suggestions
 inoremap <silent><expr> <c-space> coc#refresh()
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
