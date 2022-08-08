@@ -73,8 +73,7 @@ let g:netrw_gx="<cWORD>"
 " highlight the line the cursor is in
 set cursorline
 
-" whitespace characters
-set list
+" whitespace characters, use :set list to show them (off by default)
 set listchars+=tab:\ \ ┊,lead:.,trail:.
 
 " search down into subfolders
