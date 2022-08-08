@@ -19,12 +19,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<C
 
 " remap for complete to use tab and <cr>
 inoremap <silent><expr> <TAB>
-            \ coc#pum#visible() ? coc#pum#next(0):
+            \ coc#pum#visible() ? coc#pum#confirm():
             \ <SID>check_back_space() ? "\<Tab>" :
             \ coc#refresh()
-
-" shift tab to select previous suggestion
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(0) : "\<C-h>"
 
 " control spacebar to show suggestions
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -77,7 +74,7 @@ augroup mygroup
 augroup end
 
 " show code actions for current line
-"nmap <a-cr>  v<Plug>(coc-codeaction-selected)
+nmap <a-cr>  v<Plug>(coc-codeaction-selected)
 
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
