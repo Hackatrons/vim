@@ -103,11 +103,13 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_global_extensions = [
             \'coc-tsserver',
+            \'coc-omnisharp',
             \'coc-prettier',
             \'coc-json',
             \'coc-css',
             \'coc-markdownlint',
             \'coc-snippets',
             \'@yaegassy/coc-volar',
-            \'@yaegassy/coc-volar-tools'
+            \'@yaegassy/coc-volar-tools',
+            \'coc-highlight'
             \]

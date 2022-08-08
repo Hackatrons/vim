@@ -68,7 +68,6 @@ Plug 'iamcco/markdown-preview.nvim', {'do': 'call mkdp#util#install()' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile' }
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'mhinz/vim-startify'
 
 call plug#end()
