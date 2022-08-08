@@ -14,6 +14,14 @@ inoremap <expr> jk pumvisible() ? "" : "<Esc>"
 " paste mode
 set pastetoggle=<F2>
 
+" switch between buffers
+
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
+" bring up a switch buffer menu
+nnoremap <Leader>b :ls<CR>:b<Space>
+
 " Use ctrl-[hjkl] to select the active split
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
