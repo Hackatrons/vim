@@ -30,3 +30,6 @@ set cindent
 
 " disable automatic comment continuation
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" remove the red background colour on error messages
+:hi Error guibg=None
