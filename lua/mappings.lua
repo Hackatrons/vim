@@ -79,3 +79,6 @@ nmap('gb', '<c-o>')
 
 -- get back into normal mode while in terminal
 map('t', '<esc>', '<c-\\><c-n>')
+
+-- quick bind to close buffers
+nmap('<leader>q', ':bd!<cr>')
