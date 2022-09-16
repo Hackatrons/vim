@@ -1,84 +1,64 @@
-function map(mode, shortcut, command)
-    vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
-end
-
--- insert mode map helper function
-function imap(shortcut, command)
-    map('i', shortcut, command)
-end
-
--- normal mode map helper function
-function nmap(shortcut, command)
-    map('n', shortcut, command)
-end
-
--- visual mode map helper function
-function vmap(shortcut, command)
-    map('v', shortcut, command)
-end
+local m = require('common/map')
 
 vim.g.mapleader = ' '
 
 vim.opt.pastetoggle = '<F2>'
 
 -- undo
-nmap('<c-z>', 'u')
-imap('<c-z>', '<c-o>u')
+m.nmap('<c-z>', 'u')
+m.imap('<c-z>', '<c-o>u')
 
 -- redo
-nmap('<c-y>', '<c-r>')
-imap('<c-y>', '<c-o><c-r>')
+m.nmap('<c-y>', '<c-r>')
+m.imap('<c-y>', '<c-o><c-r>')
 
 -- save
-imap('<c-s>', '<esc>:update<cr>gi')
-nmap('<c-s>', ':update<cr>')
+m.imap('<c-s>', '<esc>:update<cr>gi')
+m.nmap('<c-s>', ':update<cr>')
 
 -- copy and paste to system clipboard
-vmap('<c-c>', '"+y')
-imap('<c-v>', '<c-o>"+gP')
-nmap('<c-v>', '"+gP')
+m.vmap('<c-c>', '"+y')
+m.imap('<c-v>', '<c-o>"+gP')
+m.nmap('<c-v>', '"+gP')
 
 -- select all
-imap('<c-a>', '<esc>ggVG')
-nmap('<c-a>', 'ggVG')
+m.imap('<c-a>', '<esc>ggVG')
+m.nmap('<c-a>', 'ggVG')
 
 -- shortcut to escape in insert mode
-imap('jk', '<esc>')
+m.imap('jk', '<esc>')
 
 -- easier to type ;w than :w
-nmap(';', ':')
+m.nmap(';', ':')
 
 -- reload our vimconfig
-nmap('<leader>sv', ':luafile %<cr>')
+m.nmap('<leader>sv', ':luafile %<cr>')
 
 -- switch between buffers
-nmap('<c-n>', ':bnext<cr>')
-nmap('<c-p>', ':bprev<cr>')
-
--- bring up buffer menu
-nmap('<leader>b', ':ls<cr>')
+m.nmap('<c-n>', ':bnext<cr>')
+m.nmap('<c-p>', ':bprev<cr>')
 
 -- clear highlighting from last search
-nmap('//', ':noh<cr>')
+m.nmap('//', ':noh<cr>')
 
 -- deletes previous word
-imap('<c-bs>', '<c-w>')
+m.imap('<c-bs>', '<c-w>')
 
 -- deletes next word
-imap('<c-del>', '<c-o>dw')
+m.imap('<c-del>', '<c-o>dw')
 
 -- select the active split
-nmap('<c-k>', ':wincmd k<cr>')
-nmap('<c-j>', ':wincmd j<cr>')
-nmap('<c-h>', ':wincmd h<cr>')
-nmap('<c-l>', ':wincmd l<cr>')
+m.nmap('<c-k>', ':wincmd k<cr>')
+m.nmap('<c-j>', ':wincmd j<cr>')
+m.nmap('<c-h>', ':wincmd h<cr>')
+m.nmap('<c-l>', ':wincmd l<cr>')
 
 -- jump back and forward
-nmap('gf', '<c-i>')
-nmap('gb', '<c-o>')
+m.nmap('gf', '<c-i>')
+m.nmap('gb', '<c-o>')
 
 -- get back into normal mode while in terminal
-map('t', '<esc>', '<c-\\><c-n>')
+m.map('t', '<esc>', '<c-\\><c-n>')
 
 -- quick bind to close buffers
-nmap('<leader>q', ':bd!<cr>')
+m.nmap('<leader>q', ':bd!<cr>')

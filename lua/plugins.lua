@@ -32,6 +32,10 @@ require('packer').startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     }
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 end)
 
 function loadConfig()
@@ -40,6 +44,7 @@ function loadConfig()
     require('bufferline').setup()
     require('lualine').setup()
     require('gitsigns').setup()
+    require('plugins/telescope')
 end
 
 if install_plugins then
