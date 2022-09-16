@@ -1,9 +1,11 @@
 vim.opt.background = 'dark'
-vim.opt.termguicolors = true
+
+if (vim.fn.has('termguicolors') == 1) then
+    vim.opt.termguicolors = true
+end
 
 vim.cmd [[
 syntax enable
-colorscheme codedark
 ]]
 
 -- tab width equivalent in spaces
