@@ -14,6 +14,7 @@ end
 require('packer').startup(function(use)
     -- packer can update itself
     use 'wbthomason/packer.nvim'
+    use 'lewis6991/impatient.nvim'
     use 'tomasiser/vim-code-dark'
     use {
         'nvim-lualine/lualine.nvim',
@@ -38,12 +39,14 @@ require('packer').startup(function(use)
                 -- close the packer window
                 vim.cmd("bd")
                 -- load the rest of our config
+                require('impatient')
                 require('config')
             end,
         })
 
         require('packer').sync()
     else
+        require('impatient')
         require('config')
     end
 end)
