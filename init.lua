@@ -25,6 +25,10 @@ require('packer').startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons'
     }
     use 'lewis6991/gitsigns.nvim'
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
     if install_plugins then
         vim.api.nvim_create_autocmd('User', {
