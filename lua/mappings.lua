@@ -38,6 +38,10 @@ vmap('<c-c>', '"+y')
 imap('<c-v>', '<c-o>"+gP')
 nmap('<c-v>', '"+gP')
 
+-- select all
+imap('<c-a>', '<esc>ggVG')
+nmap('<c-a>', 'ggVG')
+
 -- shortcut to escape in insert mode
 imap('jk', '<esc>')
 
