@@ -1,16 +1,23 @@
-# VIM #
+# Neovim #
 
-This repository contains my VIM settings.
+This repository contains my Neovim settings.
 
 ## Installation ##
 
-```bash
+```sh
 git clone git@gitlab.com:DanielHack/vim.git ~/.vim
-cd ~/.vim/install
 ```
 
-Run the appropriate install script for your system.
+### Windows ###
 
-* windows.ps1 - Windows
-* rhel.ps1 - Red Hat based distros (e.g. Centos)
-* deb.ps1 - Debian based distros (e.g. Ubuntu)
+```cmd
+cmd /c mklink "%USERPROFILE%\.vsvimrc" "%USERPROFILE%\.vim\.vsvimrc"
+cmd /c mklink /D "%USERPROFILE%\AppData\Local\nvim\" "%USERPROFILE%\.vim\"
+```
+
+### Linux (Debian based) ###
+
+```sh
+mkdir -p ~/.config/nvim/
+ln -s ~/.vim/ ~/.config/nvim/
+```
