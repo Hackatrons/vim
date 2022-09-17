@@ -43,7 +43,7 @@ function loadConfig()
     vim.cmd('colorscheme codedark')
     require('bufferline').setup()
     require('lualine').setup()
-    require('gitsigns').setup()
+    require('plugins/gitsigns')
     require('plugins/telescope')
 end
 
