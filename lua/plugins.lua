@@ -12,6 +12,14 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     install_plugins = true
 end
 
+-- recompile this packer loader file upon making changes
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
 -- specify plugins
 require('packer').startup(function(use)
     -- packer can update itself
@@ -29,8 +37,9 @@ require('packer').startup(function(use)
     }
     use 'lewis6991/gitsigns.nvim'
     use {
-        "iamcco/markdown-preview.nvim",
+        'iamcco/markdown-preview.nvim',
         run = function() vim.fn["mkdp#util#install"]() end,
+        ft = { 'markdown' }
     }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
