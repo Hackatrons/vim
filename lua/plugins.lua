@@ -60,6 +60,7 @@ function loadConfig()
     require('plugins/bufferline')
     require('plugins/gitsigns')
     require('plugins/telescope')
+    require('plugins/disable')
 end
 
 if install_plugins then
