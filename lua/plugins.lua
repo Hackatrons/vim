@@ -45,18 +45,14 @@ require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
+    use { 'numToStr/Comment.nvim' }
 end)
 
 function loadConfig()
     require('impatient')
     vim.cmd('colorscheme codedark')
     require('lualine').setup()
+    require('Comment').setup()
     require('plugins/bufferline')
     require('plugins/gitsigns')
     require('plugins/telescope')
