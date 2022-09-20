@@ -32,7 +32,7 @@ require('packer').startup(function(use)
     use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'lewis6991/gitsigns.nvim'
     use {
@@ -45,6 +45,10 @@ require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use { 'numToStr/Comment.nvim' }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 end)
 
 function loadConfig()
@@ -56,6 +60,7 @@ function loadConfig()
     require('plugins/gitsigns')
     require('plugins/telescope')
     require('plugins/disable')
+    require("nvim-tree").setup()
 end
 
 if install_plugins then

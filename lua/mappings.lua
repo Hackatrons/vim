@@ -65,5 +65,12 @@ m.nmap('<leader>q', ':bd!<cr>')
 
 -- toggle line comment
 -- specify noremap to false as the plugin won't have loaded yet
-m.vmap('<leader>c', 'gc', { noremap = false })
-m.nmap('<leader>c', 'gcc', { noremap = false })
+m.vmap('<leader>cc', 'gc', { noremap = false })
+m.nmap('<leader>cc', 'gcc', { noremap = false })
+
+-- bring up fuzzy finders
+m.nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
+m.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
+
+-- show file explorer
+m.nmap('<leader>sf', ':NvimTreeToggle<cr>')
