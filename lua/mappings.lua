@@ -62,3 +62,8 @@ m.map('t', '<esc>', '<c-\\><c-n>')
 
 -- quick bind to close buffers
 m.nmap('<leader>q', ':bd!<cr>')
+
+-- toggle line comment
+-- specify noremap to false as the plugin won't have loaded yet
+m.vmap('<leader>c', 'gc', { noremap = false })
+m.nmap('<leader>c', 'gcc', { noremap = false })
