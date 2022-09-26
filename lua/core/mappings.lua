@@ -1,4 +1,4 @@
-local m = require('common/map')
+local m = require('utils/map')
 
 vim.g.mapleader = ' '
 
@@ -66,6 +66,7 @@ m.nmap('<leader>qq', ':bd!<cr>')
 -- toggle line comment
 -- specify noremap to false as the plugin won't have loaded yet
 m.vmap('<leader>cc', 'gc', { noremap = false })
+m.vmap('<c-k><c-c>', 'gc', { noremap = false })
 m.nmap('<leader>cc', 'gcc', { noremap = false })
 
 -- bring up fuzzy finders
@@ -74,4 +75,4 @@ m.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
 
 -- show file explorer
 m.nmap('<leader>sf', ':NvimTreeToggle<cr>')
-m.nmap('<s-a-l>', ':NvimTreeFindFile<cr>')
+m.nmap('<s-a-l>', ':NvimTreeFindFileToggle<cr>')
