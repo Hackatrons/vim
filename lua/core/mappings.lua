@@ -64,10 +64,9 @@ m.map('t', '<esc>', '<c-\\><c-n>')
 m.nmap('<leader>qq', ':bd!<cr>')
 
 -- toggle line comment
--- specify noremap to false as the plugin won't have loaded yet
 m.vmap('<leader>cc', 'gc', { noremap = false })
-m.vmap('<c-k><c-c>', 'gc', { noremap = false })
 m.nmap('<leader>cc', 'gcc', { noremap = false })
+m.vmap('<c-k><c-c>', 'gc', { noremap = false })
 
 -- bring up fuzzy finders
 m.nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
