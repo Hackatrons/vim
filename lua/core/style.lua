@@ -24,6 +24,6 @@ opt.cindent = true
 -- disable automatic comment continuation
 vim.api.nvim_create_autocmd('FileType', {
     pattern = '*',
-    command = 'setlocal formatoptions-=r'
+    command = 'setlocal formatoptions-=ro'
 })
 
