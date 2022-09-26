@@ -62,7 +62,7 @@ function loadConfig()
     require('plugins/gitsigns')
     require('plugins/telescope')
     require('plugins/disable')
-    require("nvim-tree").setup()
+    require('plugins/tree')
 end
 
 if install_plugins then
