@@ -74,3 +74,4 @@ m.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
 
 -- show file explorer
 m.nmap('<leader>sf', ':NvimTreeToggle<cr>')
+m.nmap('<s-a-l>', ':NvimTreeFindFile<cr>')
