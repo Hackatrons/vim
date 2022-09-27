@@ -44,3 +44,6 @@ opt.autochdir = true
 -- whitespace characters
 opt.listchars = 'tab:  |,lead:.,trail:.'
 opt.list = true
+
+-- persist undo history
+opt.undofile = true
