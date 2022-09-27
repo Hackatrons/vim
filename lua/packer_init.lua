@@ -50,6 +50,7 @@ require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'tpope/vim-obsession'
+    use 'nvim-treesitter/nvim-treesitter'
 end)
 
 function loadConfig()
@@ -69,6 +70,7 @@ function loadConfig()
     require('plugins/disable')
     require('plugins/tree')
     require('plugins/obsession')
+    require('plugins/treesitter')
 end
 
 if install_plugins then
