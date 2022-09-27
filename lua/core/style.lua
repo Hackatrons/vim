@@ -27,3 +27,6 @@ vim.api.nvim_create_autocmd('FileType', {
     command = 'setlocal formatoptions-=ro'
 })
 
+-- use devicons with neovide
+-- disable them for other UIs that haven't got a patched font configured
+vim.g.me_enable_icons = vim.g.neovide or false

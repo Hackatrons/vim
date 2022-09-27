@@ -25,7 +25,6 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use 'tomasiser/vim-code-dark'
-    use 'kyazdani42/nvim-web-devicons'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -55,7 +54,12 @@ end)
 function loadConfig()
     require('impatient')
     vim.cmd('colorscheme codedark')
-    require('nvim-web-devicons').setup()
+
+    if (vim.g.me_use_icons) then
+        vim.cmd('packadd nvim-web-devicons')
+        require('nvim-web-devicons').setup()
+    end
+
     require('Comment').setup()
     require('plugins/lualine')
     require('plugins/bufferline')
