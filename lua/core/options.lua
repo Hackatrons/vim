@@ -47,3 +47,7 @@ opt.list = true
 
 -- persist undo history
 opt.undofile = true
+
+-- set the window title to the filename
+opt.title = true
+opt.titlestring = '%t'
