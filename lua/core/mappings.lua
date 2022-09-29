@@ -75,3 +75,6 @@ m.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
 -- show file explorer
 m.nmap('<leader>sf', ':NvimTreeToggle<cr>')
 m.nmap('<s-a-l>', ':NvimTreeFindFileToggle<cr>')
+
+-- paste clipboard in command mode
+m.map('c', '<c-v>', '<c-r>+', { silent = false })
