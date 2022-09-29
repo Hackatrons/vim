@@ -73,8 +73,8 @@ local loadConfig = function()
         require('nvim-web-devicons').setup()
     end
 
-    require('Comment').setup()
     require('nvim-surround').setup()
+    require('plugins/comment')
     require('plugins/lualine')
     require('plugins/bufferline')
     require('plugins/gitsigns')

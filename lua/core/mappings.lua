@@ -63,11 +63,6 @@ m.map('t', '<esc>', '<c-\\><c-n>')
 -- quick bind to close buffers
 m.nmap('<leader>qq', ':bd!<cr>')
 
--- toggle line comment
-m.vmap('<leader>cc', 'gc', { noremap = false })
-m.nmap('<leader>cc', 'gcc', { noremap = false })
-m.vmap('<c-k><c-c>', 'gc', { noremap = false })
-
 -- bring up fuzzy finders
 m.nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 m.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
