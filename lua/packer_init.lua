@@ -14,9 +14,9 @@ end
 -- recompile the packer loader file upon making changes
 local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
-  command = 'source <afile> | PackerCompile',
-  group = packer_group,
-  pattern = 'packer_init.lua'
+    command = 'source <afile> | PackerCompile',
+    group = packer_group,
+    pattern = 'packer_init.lua'
 })
 
 -- specify plugins
@@ -51,6 +51,14 @@ require('packer').startup(function(use)
     }
     use 'tpope/vim-obsession'
     use 'nvim-treesitter/nvim-treesitter'
+
+    -- lsp
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
+    use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
+    use 'hrsh7th/cmp-buffer'
 end)
 
 function loadConfig()
@@ -71,6 +79,8 @@ function loadConfig()
     require('plugins/tree')
     require('plugins/obsession')
     require('plugins/treesitter')
+    require('plugins/lsp')
+    require('plugins/cmp')
 end
 
 if install_plugins then
