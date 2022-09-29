@@ -61,7 +61,7 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
 end)
 
-function loadConfig()
+local loadConfig = function()
     require('impatient')
     vim.cmd('colorscheme codedark')
 
