@@ -14,9 +14,9 @@ local on_attach = function(_, bufnr)
     nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
     nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
     nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-    nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+    nmap('<c-t>', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-    nmap('K', vim.lsp.buf.signature_help, 'Signature Documentation')
+    nmap('K', vim.lsp.buf.hover, 'Symbol Information')
 
     local format = function(_)
         if vim.lsp.buf.format then
@@ -38,7 +38,7 @@ local capabilities = require('cmp_nvim_lsp')
 require('mason').setup()
 require('mason-lspconfig').setup({
     -- ensure these servers are installed
-    ensure_installed = { 'tsserver', 'sumneko_lua' }
+    ensure_installed = { 'tsserver', 'sumneko_lua', 'omnisharp' }
 })
 
 local lspconfig = require('lspconfig')
@@ -64,3 +64,4 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.tsserver.setup({})
+lspconfig.omnisharp.setup({})
