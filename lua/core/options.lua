@@ -51,3 +51,18 @@ opt.undofile = true
 -- set the window title to the filename
 opt.title = true
 opt.titlestring = '%t'
+
+opt.spelllang = 'en_au'
+
+-- limit to 10 suggestions
+opt.spellsuggest = '10'
+
+-- Enable spellchecking in markdown, text, and gitcommit files
+local spell_group = vim.api.nvim_create_augroup('Spelling', { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "gitcommit", "markdown", "text" },
+    group = spell_group,
+    callback = function()
+        vim.opt_local.spell = true
+    end,
+})
