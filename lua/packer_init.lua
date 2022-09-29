@@ -5,7 +5,7 @@ local install_plugins = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     print('Installing...')
     local packer_url = 'https://github.com/wbthomason/packer.nvim'
-    vim.fn.system({'git', 'clone', '--depth', '1', packer_url, install_path})
+    vim.fn.system({ 'git', 'clone', '--depth', '1', packer_url, install_path })
 
     vim.cmd('packadd packer.nvim')
     install_plugins = true
@@ -19,9 +19,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = 'packer_init.lua'
 })
 
--- specify plugins
 require('packer').startup(function(use)
-    -- packer can update itself
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use 'tomasiser/vim-code-dark'
@@ -51,6 +49,10 @@ require('packer').startup(function(use)
     }
     use 'tpope/vim-obsession'
     use 'nvim-treesitter/nvim-treesitter'
+    use {
+        'kylechui/nvim-surround',
+        tag = "*"
+    }
 
     -- lsp
     use 'neovim/nvim-lspconfig'
@@ -72,6 +74,7 @@ local loadConfig = function()
     end
 
     require('Comment').setup()
+    require('nvim-surround').setup()
     require('plugins/lualine')
     require('plugins/bufferline')
     require('plugins/gitsigns')
@@ -100,4 +103,3 @@ if install_plugins then
 else
     loadConfig()
 end
-
