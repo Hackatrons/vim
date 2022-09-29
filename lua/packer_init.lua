@@ -11,13 +11,13 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     install_plugins = true
 end
 
--- recompile this packer loader file upon making changes
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost packer_init.lua source <afile> | PackerCompile
-  augroup end
-]])
+-- recompile the packer loader file upon making changes
+local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  command = 'source <afile> | PackerCompile',
+  group = packer_group,
+  pattern = 'packer_init.lua'
+})
 
 -- specify plugins
 require('packer').startup(function(use)
@@ -42,7 +42,7 @@ require('packer').startup(function(use)
     }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = { 'nvim-lua/plenary.nvim' }
     }
     use 'numToStr/Comment.nvim'
     use {
