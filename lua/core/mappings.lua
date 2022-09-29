@@ -65,3 +65,6 @@ m.nmap('<leader>qq', ':bd!<cr>')
 
 -- paste clipboard in command mode
 m.map('c', '<c-v>', '<c-r>+', { silent = false })
+
+-- delete word backwards
+m.map('c', '<c-bs>', '<c-w>', { silent = false })
