@@ -35,6 +35,14 @@ end
 local capabilities = require('cmp_nvim_lsp')
     .update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+-- show signature help on edit
+require("lsp_signature").setup({
+    -- hide the virtual text hint
+    hint_enable = false,
+    -- place the window below the line instead of above
+    floating_window_above_cur_line = false,
+})
+
 require('mason').setup()
 require('mason-lspconfig').setup({
     -- ensure these servers are installed
