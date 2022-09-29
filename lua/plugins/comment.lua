@@ -6,8 +6,8 @@ require('Comment').setup({
 local map = vim.keymap.set
 
 map('v', '<leader>cc', '<Plug>(comment_toggle_linewise_visual)')
--- visual studio muscle memory binding
-map('v', '<c-k><c-c>', '<Plug>(comment_toggle_linewise_visual)')
-
 map('n', '<leader>cc', '<Plug>(comment_toggle_linewise_current)')
 map('n', '<c-k><c-c>', '<Plug>(comment_toggle_linewise_current)')
+
+-- visual studio muscle memory binding
+map('v', '<c-k><c-c>', '<Plug>(comment_toggle_linewise_visual)')

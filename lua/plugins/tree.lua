@@ -15,3 +15,7 @@ require("nvim-tree").setup({
         }
     }
 })
+
+local m = require('utils/map')
+m.nmap('<leader>sf', '<cmd>NvimTreeToggle<cr>')
+m.nmap('<s-a-l>', '<cmd>NvimTreeFindFileToggle<cr>')

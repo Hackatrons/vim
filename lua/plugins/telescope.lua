@@ -5,3 +5,7 @@ require('telescope').setup({
         }
     }
 })
+
+local m = require('utils/map')
+m.nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
+m.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
