@@ -20,47 +20,78 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 
 require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+    -- lua caching for improved performance
     use 'lewis6991/impatient.nvim'
+
+    -- package management
+    use 'wbthomason/packer.nvim'
+
+    -- color scheme
     use 'tomasiser/vim-code-dark'
+
+    -- bottom status line
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+    -- buffer tabs
     use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+    -- git status in sign column
     use 'lewis6991/gitsigns.nvim'
-    use {
-        'iamcco/markdown-preview.nvim',
-        run = function() vim.fn["mkdp#util#install"]() end,
-        ft = { 'markdown' }
-    }
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { 'nvim-lua/plenary.nvim' }
-    }
-    use 'numToStr/Comment.nvim'
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    use 'tpope/vim-obsession'
+
+    -- syntax parsing for styling
     use 'nvim-treesitter/nvim-treesitter'
+
+    -- toggle comment blocks
+    use 'numToStr/Comment.nvim'
+
+    -- session management
+    use 'tpope/vim-obsession'
+
+    -- change surrounding characters
     use {
         'kylechui/nvim-surround',
         tag = "*"
     }
 
-    -- lsp
+    -- markdown preview in browser
+    use {
+        'iamcco/markdown-preview.nvim',
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = { 'markdown' }
+    }
+
+    -- fuzzy finder
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+
+    -- file explorer
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+    -- language server protocol related
     use 'neovim/nvim-lspconfig'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
+
+    -- auto complete menu
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
     use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
+
+    -- lsp for buffers content
     use 'hrsh7th/cmp-buffer'
+
+    -- show signature help when invoking function
     use 'ray-x/lsp_signature.nvim'
 end)
 
