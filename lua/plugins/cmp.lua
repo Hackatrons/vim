@@ -61,7 +61,11 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }
     },
-    formatting = formatting
+    formatting = formatting,
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
 })
 
 cmp.setup.filetype({ 'markdown', 'text' }, {
