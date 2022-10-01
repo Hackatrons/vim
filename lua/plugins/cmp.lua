@@ -1,6 +1,45 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
+local formatting = nil
+
+if (vim.g.me_enable_icons) then
+    local kind_icons = {
+        Text = "",
+        Method = "",
+        Function = "",
+        Constructor = "",
+        Field = "",
+        Variable = "",
+        Class = "ﴯ",
+        Interface = "",
+        Module = "",
+        Property = "ﰠ",
+        Unit = "",
+        Value = "",
+        Enum = "",
+        Keyword = "",
+        Snippet = "",
+        Color = "",
+        File = "",
+        Reference = "",
+        Folder = "",
+        EnumMember = "",
+        Constant = "",
+        Struct = "",
+        Event = "",
+        Operator = "",
+        TypeParameter = ""
+    }
+
+    formatting = {
+        format = function(_, vim_item)
+            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+            return vim_item
+        end
+    }
+end
+
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 cmp.setup({
@@ -22,6 +61,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }
     },
+    formatting = formatting
 })
 
 cmp.setup.filetype({ 'markdown', 'text' }, {
