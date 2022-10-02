@@ -20,7 +20,7 @@ opt.showmatch = true
 opt.ruler = true
 
 -- allow backspace to delete these characters
-opt.backspace = [[indent,eol,start]]
+opt.backspace = 'indent,eol,start'
 
 -- hide buffers instead of closing them
 opt.hidden = true
@@ -59,8 +59,8 @@ opt.spellsuggest = '10'
 
 -- Enable spellchecking in markdown, text, and gitcommit files
 local spell_group = vim.api.nvim_create_augroup('Spelling', { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "gitcommit", "markdown", "text" },
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'gitcommit', 'markdown', 'text' },
     group = spell_group,
     callback = function()
         vim.opt_local.spell = true
