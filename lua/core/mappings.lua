@@ -74,3 +74,31 @@ m.nmap('<a-right>', ':vertical resize +2<cr>')
 m.nmap('<a-left>', ':vertical resize -2<cr>')
 m.nmap('<a-down>', ':resize +2<cr>')
 m.nmap('<a-up>', ':resize -2<cr>')
+
+-- lsp mappings
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('LspMappings', { clear = true }),
+    callback = function(args)
+        local options = {
+            buffer = args.buf,
+            silent = true
+        }
+
+        local telescope = require('telescope.builtin')
+
+        m.nmap('<leader>rn', vim.lsp.buf.rename, options)
+        m.nmap('<a-cr>', vim.lsp.buf.code_action, options)
+
+        m.nmap('gd', vim.lsp.buf.definition, options)
+        m.nmap('gi', vim.lsp.buf.implementation, options)
+        m.nmap('gr', telescope.lsp_references, options)
+        m.nmap('<leader>ds', telescope.lsp_document_symbols, options)
+        m.nmap('<c-t>', telescope.lsp_dynamic_workspace_symbols, options)
+
+        m.nmap('K', vim.lsp.buf.hover)
+
+        m.nmap('<leader>fd', vim.lsp.buf.format, options)
+        -- visual studio keybinding muscle memory
+        m.nmap('<c-k><c-d>', vim.lsp.buf.format, options)
+    end
+})
