@@ -68,3 +68,9 @@ m.map('c', '<c-v>', '<c-r>+', { silent = false })
 
 -- delete word backwards
 m.map('c', '<c-bs>', '<c-w>', { silent = false })
+
+-- resize windows
+m.nmap('<a-right>', ':vertical resize +2<cr>')
+m.nmap('<a-left>', ':vertical resize -2<cr>')
+m.nmap('<a-down>', ':resize +2<cr>')
+m.nmap('<a-up>', ':resize -2<cr>')
