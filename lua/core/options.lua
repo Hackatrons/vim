@@ -69,3 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- hide the command line when not used
 opt.cmdheight = 0
+
+if vim.fn.has('win32') == 1 then
+    opt.guifont = 'Cascadia Code'
+end
