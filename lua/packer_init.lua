@@ -99,6 +99,9 @@ require('packer').startup(function(use)
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
     use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
 
+    -- ui improvements
+    use 'stevearc/dressing.nvim'
+
     -- lsp for buffers content
     use 'hrsh7th/cmp-buffer'
 
