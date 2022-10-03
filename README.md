@@ -1,37 +1,33 @@
-# Neovim #
+# Neovim
 
 This repository contains my Neovim settings.
 
-## Installation ##
+## Setup
 
 ```sh
 git clone git@gitlab.com:DanielHack/vim.git ~/.vim
 ```
 
-### Windows ###
+## Pre-requisites
 
-**Install**
+- Node.js for language servers and code completion.
+
+### Windows
 
 ```powershell
-choco install neovide
+choco install neovide nodejs
 ```
-
-**Configure**
 
 ```powershell
 cmd /c mklink "%USERPROFILE%\.vsvimrc" "%USERPROFILE%\.vim\.vsvimrc"
 cmd /c mklink /D "%USERPROFILE%\AppData\Local\nvim\" "%USERPROFILE%\.vim\"
 ```
 
-### Debian ###
-
-**Install**
+### Debian
 
 ```sh
-sudo apt install neovim -y
+sudo apt install neovim nodejs -y
 ```
-
-**Configure**
 
 ```sh
 mkdir -p ~/.config/nvim/
