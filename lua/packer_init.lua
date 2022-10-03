@@ -27,7 +27,12 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- color scheme
-    use 'tomasiser/vim-code-dark'
+    use {
+        'tomasiser/vim-code-dark',
+        config = function()
+            require('plugins/colours')
+        end
+    }
 
     -- bottom status line
     use {
@@ -124,7 +129,7 @@ if install_plugins then
         once = true,
         callback = function()
             -- close the packer window
-            vim.cmd("q")
+            vim.cmd('q')
             -- load the rest of our config
             loadConfig()
         end,
