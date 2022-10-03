@@ -102,3 +102,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
         m.nmap('<c-k><c-d>', vim.lsp.buf.format, options)
     end
 })
+
+-- open url under cursor
+if (vim.fn.has('win32')) then
+    m.nmap('gx', ':!start <cfile><cr>')
+else
+    m.nmap('gx', ':!open <cfile><cr>')
+end
+
+-- toggle showing whitespace characters
+m.nmap('<leader>sw', function() vim.opt.list = true end)
+m.nmap('<leader>hw', function() vim.opt.list = false end)

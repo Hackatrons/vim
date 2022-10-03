@@ -42,8 +42,7 @@ opt.undolevels = 1000
 opt.autochdir = true
 
 -- whitespace characters
-opt.listchars = 'tab:  |,lead:.,trail:.'
-opt.list = true
+opt.listchars = 'tab:>- ,lead:.,trail:.'
 
 -- persist undo history
 opt.undofile = true
