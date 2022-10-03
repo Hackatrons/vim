@@ -140,6 +140,7 @@ local loadConfig = function()
     require('plugins/obsession')
     require('plugins/treesitter')
     require('plugins/lsp')
+    require('plugins/null-ls')
     require('plugins/cmp')
     require('plugins/snippets')
 end
