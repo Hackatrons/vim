@@ -3,7 +3,7 @@ local capabilities = require('cmp_nvim_lsp')
     .update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- show signature help on edit
-require("lsp_signature").setup({
+require('lsp_signature').setup({
     -- hide the virtual text hint
     hint_enable = false,
     -- place the window below the line instead of above
@@ -13,6 +13,9 @@ require("lsp_signature").setup({
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = { 'tsserver', 'sumneko_lua', 'omnisharp' }
+})
+require('mason-null-ls').setup({
+    ensure_installed = { 'markdownlint', 'prettierd' }
 })
 
 local lspconfig = require('lspconfig')
@@ -38,3 +41,19 @@ lspconfig.sumneko_lua.setup({
 
 lspconfig.tsserver.setup({})
 lspconfig.omnisharp.setup({})
+
+local null_ls = require('null-ls')
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.markdownlint,
+        null_ls.builtins.formatting.prettierd
+    },
+})
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = 'rounded',
+})
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = 'rounded',
+})

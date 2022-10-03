@@ -86,8 +86,15 @@ require('packer').startup(function(use)
 
     -- language server protocol related
     use 'neovim/nvim-lspconfig'
+
+    -- package manager for lsps/formatters/linters/daps
     use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
+
+    -- auto install lsps via mason
+    use {
+        'williamboman/mason-lspconfig.nvim',
+        requires = { 'williamboman/mason.nvim' }
+    }
 
     -- auto complete menu
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
@@ -98,11 +105,19 @@ require('packer').startup(function(use)
 
     -- show signature help when invoking function
     use 'ray-x/lsp_signature.nvim'
+
+    -- use linters and other sources as an lsp
+    use 'jose-elias-alvarez/null-ls.nvim'
+
+    -- auto install linters/formatters via mason
+    use {
+        'jayp0521/mason-null-ls.nvim',
+        requires = { 'williamboman/mason.nvim', 'nvim-lua/plenary.nvim' }
+    }
 end)
 
 local loadConfig = function()
     require('impatient')
-    vim.cmd('colorscheme codedark')
 
     if (vim.g.me_use_icons) then
         vim.cmd('packadd nvim-web-devicons')
