@@ -43,6 +43,8 @@ m.nmap('//', ':noh<cr>')
 
 -- deletes previous word
 m.imap('<c-bs>', '<c-w>')
+-- control backspace is <c-h> in some terminals
+m.imap('<c-h>', '<c-w>')
 
 -- deletes next word
 m.imap('<c-del>', '<c-o>dw')
