@@ -83,8 +83,11 @@ require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- language server protocol related
+    -- language server protocol configuration
     use 'neovim/nvim-lspconfig'
+
+    -- show signature help when invoking functions
+    use 'ray-x/lsp_signature.nvim'
 
     -- package manager for lsps/formatters/linters/daps
     use 'williamboman/mason.nvim'
@@ -95,30 +98,29 @@ require('packer').startup(function(use)
         requires = { 'williamboman/mason.nvim' }
     }
 
-    -- auto complete menu
-    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
-    use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
-
-    -- ui improvements
-    use 'stevearc/dressing.nvim'
-
-    -- lsp for buffers content
-    use 'hrsh7th/cmp-buffer'
-
-    -- show signature help when invoking function
-    use 'ray-x/lsp_signature.nvim'
-
-    -- use linters and other sources as an lsp
-    use 'jose-elias-alvarez/null-ls.nvim'
-
     -- auto install linters/formatters via mason
     use {
         'jayp0521/mason-null-ls.nvim',
         requires = { 'williamboman/mason.nvim', 'nvim-lua/plenary.nvim' }
     }
 
+    -- use linters and other sources as an lsp
+    use 'jose-elias-alvarez/null-ls.nvim'
+
+    -- auto complete menu
+    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
+
+    -- completion source for buffer content
+    use 'hrsh7th/cmp-buffer'
+
+    -- snippet engine
+    use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
+
     -- various language snippets
     use 'rafamadriz/friendly-snippets'
+
+    -- ui improvements
+    use 'stevearc/dressing.nvim'
 end)
 
 local loadConfig = function()
