@@ -75,6 +75,11 @@ m.nmap('<a-left>', ':vertical resize -2<cr>')
 m.nmap('<a-down>', ':resize +2<cr>')
 m.nmap('<a-up>', ':resize -2<cr>')
 
+-- telescope
+m.nmap('<leader>ff', ':Telescope find_files<cr>')
+m.nmap('<leader>fb', ':Telescope buffers<cr>')
+m.nmap('<leader>fg', ':Telescope git_files<cr>')
+
 -- lsp mappings
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('LspMappings', { clear = true }),

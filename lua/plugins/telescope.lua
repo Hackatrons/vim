@@ -1,12 +1,7 @@
 require('telescope').setup({
     defaults = {
         file_ignore_patterns = {
-            "\\.git"
+            '\\.git'
         }
     }
 })
-
-local m = require('utils/map')
-m.nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
-m.nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
-m.nmap('<leader>fg', '<cmd>Telescope git_files<cr>')
