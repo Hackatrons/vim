@@ -116,6 +116,9 @@ require('packer').startup(function(use)
         'jayp0521/mason-null-ls.nvim',
         requires = { 'williamboman/mason.nvim', 'nvim-lua/plenary.nvim' }
     }
+
+    -- various language snippets
+    use 'rafamadriz/friendly-snippets'
 end)
 
 local loadConfig = function()
@@ -138,6 +141,7 @@ local loadConfig = function()
     require('plugins/treesitter')
     require('plugins/lsp')
     require('plugins/cmp')
+    require('plugins/snippets')
 end
 
 if install_plugins then

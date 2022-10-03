@@ -58,8 +58,9 @@ cmp.setup({
         ['<a-k>'] = cmp.mapping.select_prev_item(),
     }),
     sources = {
+        -- put snippets first (or could specify the priority number) to order them above lsp suggestions
+        { name = 'luasnip' },
         { name = 'nvim_lsp' },
-        { name = 'luasnip' }
     },
     formatting = formatting,
     window = {
