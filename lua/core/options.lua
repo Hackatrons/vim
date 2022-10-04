@@ -60,5 +60,5 @@ opt.spellsuggest = '10'
 opt.cmdheight = 0
 
 if vim.fn.has('win32') == 1 then
-    opt.guifont = 'Cascadia Code'
+    opt.guifont = 'Cascadia Mono:h14'
 end
