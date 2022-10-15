@@ -3,18 +3,15 @@ require('mason-lspconfig').setup({
     ensure_installed = { 'tsserver', 'sumneko_lua', 'omnisharp' }
 })
 
--- nvim-cmp supports additional completion capabilities
-local capabilities = require('cmp_nvim_lsp')
-    .update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
+local lsp_defaults = {
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
+}
 local lspconfig = require('lspconfig')
+
 lspconfig.util.default_config = vim.tbl_deep_extend(
     'force',
     lspconfig.util.default_config,
-    -- defaults to be used by all lsp servers
-    {
-        capabilities = capabilities
-    }
+    lsp_defaults
 )
 
 lspconfig.sumneko_lua.setup({
