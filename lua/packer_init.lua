@@ -6,7 +6,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     local packer_url = 'https://github.com/wbthomason/packer.nvim'
     vim.fn.system({ 'git', 'clone', '--depth', '1', packer_url, install_path })
 
-    vim.cmd('packadd packer.nvim')
+    vim.cmd.packadd('packer.nvim')
     install_plugins = true
 end
 
@@ -127,7 +127,7 @@ local loadConfig = function()
     require('impatient')
 
     if (vim.g.me_use_icons) then
-        vim.cmd('packadd nvim-web-devicons')
+        vim.cmd.packadd('nvim-web-devicons')
         require('nvim-web-devicons').setup()
     end
 
@@ -153,7 +153,7 @@ if install_plugins then
         once = true,
         callback = function()
             -- close the packer window
-            vim.cmd('q')
+            vim.cmd.q()
             -- load the rest of our config
             loadConfig()
         end,
