@@ -21,6 +21,9 @@ m.vmap('<c-c>', '"+y')
 m.imap('<c-v>', '<c-o>"+gP')
 m.nmap('<c-v>', '"+gP')
 
+-- paste without copying selected text
+m.vmap('p', '"0p')
+
 -- select all
 m.imap('<c-a>', '<esc>ggVG')
 m.nmap('<c-a>', 'ggVG')
@@ -33,6 +36,9 @@ m.nmap(';', ':')
 
 -- reload our vimconfig
 m.nmap('<leader>sv', ':luafile %<cr>')
+
+-- edit vimconfig
+m.nmap('<leader>ev', ':e ~/.vim/lua<cr>')
 
 -- switch between buffers
 m.nmap('<c-n>', ':bnext<cr>')
