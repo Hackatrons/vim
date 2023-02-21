@@ -6,8 +6,6 @@ if (vim.fn.has('termguicolors') == 1) then
     opt.termguicolors = true
 end
 
-vim.cmd('syntax enable')
-
 -- tab width equivalent in spaces
 opt.tabstop = 4
 opt.shiftwidth = 4
