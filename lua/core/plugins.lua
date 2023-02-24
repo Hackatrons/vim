@@ -66,6 +66,12 @@ local plugins = {
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
+    -- telescope extension to find the project root directory
+    {
+        'desdic/telescope-rooter.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' }
+    },
+
     -- file explorer
     {
         'kyazdani42/nvim-tree.lua',
