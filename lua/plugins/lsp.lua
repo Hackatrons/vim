@@ -31,9 +31,7 @@ lspconfig.omnisharp.setup({})
 -- show signature help on edit
 require('lsp_signature').setup({
     -- hide the virtual text hint
-    hint_enable = false,
-    -- place the window below the line instead of above
-    floating_window_above_cur_line = false,
+    hint_enable = false
 })
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
