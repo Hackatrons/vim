@@ -1,92 +1,92 @@
-local m = require('utils/map')
+local map = vim.keymap.set
 
 vim.g.mapleader = ' '
 
 vim.opt.pastetoggle = '<F2>'
 
 -- undo
-m.nmap('<c-z>', 'u')
-m.imap('<c-z>', '<c-o>u')
+map('n', '<c-z>', 'u')
+map('i', '<c-z>', '<c-o>u')
 
 -- redo
-m.nmap('<c-y>', '<c-r>')
-m.imap('<c-y>', '<c-o><c-r>')
+map('n', '<c-y>', '<c-r>')
+map('i', '<c-y>', '<c-o><c-r>')
 
 -- save
-m.imap('<c-s>', '<esc>:update<cr>gi')
-m.nmap('<c-s>', ':update<cr>')
+map('i', '<c-s>', '<esc>:update<cr>gi')
+map('n', '<c-s>', ':update<cr>')
 
 -- copy and paste to system clipboard
-m.vmap('<c-c>', '"+y')
-m.imap('<c-v>', '<c-o>"+gP')
-m.nmap('<c-v>', '"+gP')
+map('v', '<c-c>', '"+y')
+map('i', '<c-v>', '<c-o>"+gP')
+map('n', '<c-v>', '"+gP')
 
 -- paste without copying selected text
-m.vmap('p', '"0p')
+map('v', 'p', '"0p')
 
 -- select all
-m.imap('<c-a>', '<esc>ggVG')
-m.nmap('<c-a>', 'ggVG')
+map('i', '<c-a>', '<esc>ggVG')
+map('n', '<c-a>', 'ggVG')
 
 -- shortcut to escape in insert mode
-m.imap('jk', '<esc>')
+map('i', 'jk', '<esc>')
 
 -- easier to type ;w than :w
-m.nmap(';', ':')
+map('n', ';', ':')
 
 -- reload our vimconfig
-m.nmap('<leader>sv', ':luafile %<cr>')
+map('n', '<leader>sv', ':luafile %<cr>')
 
 -- edit vimconfig
-m.nmap('<leader>ev', ':e ~/.vim/lua<cr>')
+map('n', '<leader>ev', ':e ~/.vim/lua<cr>')
 
 -- switch between buffers
-m.nmap('<c-n>', ':bnext<cr>')
-m.nmap('<c-p>', ':bprev<cr>')
+map('n', '<c-n>', ':bnext<cr>')
+map('n', '<c-p>', ':bprev<cr>')
 
 -- clear highlighting from last search
-m.nmap('//', ':noh<cr>')
+map('n', '//', ':noh<cr>')
 
 -- deletes previous word
-m.imap('<c-bs>', '<c-w>')
+map('i', '<c-bs>', '<c-w>')
 -- control backspace is <c-h> in some terminals
-m.imap('<c-h>', '<c-w>')
+map('i', '<c-h>', '<c-w>')
 
 -- deletes next word
-m.imap('<c-del>', '<c-o>dw')
+map('i', '<c-del>', '<c-o>dw')
 
 -- select the active split
-m.nmap('<c-k>', ':wincmd k<cr>')
-m.nmap('<c-j>', ':wincmd j<cr>')
-m.nmap('<c-h>', ':wincmd h<cr>')
-m.nmap('<c-l>', ':wincmd l<cr>')
+map('n', '<c-k>', ':wincmd k<cr>')
+map('n', '<c-j>', ':wincmd j<cr>')
+map('n', '<c-h>', ':wincmd h<cr>')
+map('n', '<c-l>', ':wincmd l<cr>')
 
 -- jump back and forward
-m.nmap('gf', '<c-i>')
-m.nmap('gb', '<c-o>')
+map('n', 'gf', '<c-i>')
+map('n', 'gb', '<c-o>')
 
 -- get back into normal mode while in terminal
-m.map('t', '<esc>', '<c-\\><c-n>')
+map('t', '<esc>', '<c-\\><c-n>')
 
 -- quick bind to close buffers
-m.nmap('<leader>qq', ':bd!<cr>')
+map('n', '<leader>qq', ':bd!<cr>')
 
 -- paste clipboard in command mode
-m.map('c', '<c-v>', '<c-r>+', { silent = false })
+map('c', '<c-v>', '<c-r>+', { silent = false })
 
 -- delete word backwards
-m.map('c', '<c-bs>', '<c-w>', { silent = false })
+map('c', '<c-bs>', '<c-w>', { silent = false })
 
 -- resize windows
-m.nmap('<a-right>', ':vertical resize +2<cr>')
-m.nmap('<a-left>', ':vertical resize -2<cr>')
-m.nmap('<a-down>', ':resize +2<cr>')
-m.nmap('<a-up>', ':resize -2<cr>')
+map('n', '<a-right>', ':vertical resize +2<cr>')
+map('n', '<a-left>', ':vertical resize -2<cr>')
+map('n', '<a-down>', ':resize +2<cr>')
+map('n', '<a-up>', ':resize -2<cr>')
 
 -- telescope
-m.nmap('<leader>ff', ':Telescope find_files<cr>')
-m.nmap('<leader>fb', ':Telescope buffers<cr>')
-m.nmap('<leader>fg', ':Telescope git_files<cr>')
+map('n', '<leader>ff', ':Telescope find_files<cr>')
+map('n', '<leader>fb', ':Telescope buffers<cr>')
+map('n', '<leader>fg', ':Telescope git_files<cr>')
 
 -- lsp mappings
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -99,30 +99,30 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         local telescope = require('telescope.builtin')
 
-        m.nmap('<leader>rn', vim.lsp.buf.rename, options)
-        m.nmap('<a-cr>', vim.lsp.buf.code_action, options)
+        map('n', '<leader>rn', vim.lsp.buf.rename, options)
+        map('n', '<a-cr>', vim.lsp.buf.code_action, options)
 
-        m.nmap('gd', vim.lsp.buf.definition, options)
-        m.nmap('gi', vim.lsp.buf.implementation, options)
-        m.nmap('gr', telescope.lsp_references, options)
-        m.nmap('<leader>ds', telescope.lsp_document_symbols, options)
-        m.nmap('<c-t>', telescope.lsp_dynamic_workspace_symbols, options)
+        map('n', 'gd', vim.lsp.buf.definition, options)
+        map('n', 'gi', vim.lsp.buf.implementation, options)
+        map('n', 'gr', telescope.lsp_references, options)
+        map('n', '<leader>ds', telescope.lsp_document_symbols, options)
+        map('n', '<c-t>', telescope.lsp_dynamic_workspace_symbols, options)
 
-        m.nmap('K', vim.lsp.buf.hover)
+        map('n', 'K', vim.lsp.buf.hover)
 
-        m.nmap('<leader>fd', vim.lsp.buf.format, options)
+        map('n', '<leader>fd', vim.lsp.buf.format, options)
         -- visual studio keybinding muscle memory
-        m.nmap('<c-k><c-d>', vim.lsp.buf.format, options)
+        map('n', '<c-k><c-d>', vim.lsp.buf.format, options)
     end
 })
 
 -- open url under cursor
 if (vim.fn.has('win32')) then
-    m.nmap('gx', ':!start <cfile><cr>')
+    map('n', 'gx', ':!start <cfile><cr>')
 else
-    m.nmap('gx', ':!open <cfile><cr>')
+    map('n', 'gx', ':!open <cfile><cr>')
 end
 
 -- toggle showing whitespace characters
-m.nmap('<leader>sw', function() vim.opt.list = true end)
-m.nmap('<leader>hw', function() vim.opt.list = false end)
+map('n', '<leader>sw', function() vim.opt.list = true end)
+map('n', '<leader>hw', function() vim.opt.list = false end)
