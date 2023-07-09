@@ -13,7 +13,8 @@ return {
                     left = "",
                     right = "",
                 }
-            }
+            },
+            sections = { lualine_a = {} }
         }
 
         if (not vim.g.me_enable_icons) then
