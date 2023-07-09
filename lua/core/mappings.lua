@@ -55,11 +55,26 @@ map("i", "<c-h>", "<c-w>")
 -- deletes next word
 map("i", "<c-del>", "<c-o>dw")
 
--- select the active split
-map("n", "<c-k>", ":wincmd k<cr>")
-map("n", "<c-j>", ":wincmd j<cr>")
-map("n", "<c-h>", ":wincmd h<cr>")
-map("n", "<c-l>", ":wincmd l<cr>")
+-- select or create a split
+function WinMove(key)
+    local curwin = vim.fn.winnr()
+    vim.cmd.wincmd(key)
+
+    if curwin == vim.fn.winnr() then
+        if key == "j" or key == "k" then
+            vim.cmd.wincmd("s")
+        else
+            vim.cmd.wincmd("v")
+        end
+
+        vim.cmd.wincmd(key)
+    end
+end
+
+map("n", "<c-w>k", ":lua WinMove('k')<cr>")
+map("n", "<c-w>j", ":lua WinMove('j')<cr>")
+map("n", "<c-w>h", ":lua WinMove('h')<cr>")
+map("n", "<c-w>l", ":lua WinMove('l')<cr>")
 
 -- jump back and forward
 map("n", "gf", "<c-i>")
