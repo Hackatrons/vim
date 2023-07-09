@@ -21,7 +21,7 @@ cmd /c mklink /D "%USERPROFILE%\AppData\Local\nvim\" "%USERPROFILE%\.vim\"
 
 ```sh
 sudo apt install snapd nodejs npm -y
-snapd install --classic nvim
+sudo snapd install --classic nvim
 ```
 
 ```sh
