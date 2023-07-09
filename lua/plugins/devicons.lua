@@ -1,10 +1,8 @@
 return {
     "nvim-web-devicons",
     lazy = true,
+    cond = vim.g.me_enable_icons,
     config = function()
-        if (vim.g.me_use_icons) then
-            vim.cmd.packadd("nvim-web-devicons")
-            require("nvim-web-devicons").setup()
-        end
+        require("nvim-web-devicons").setup()
     end
 }
