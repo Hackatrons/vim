@@ -1,16 +1,16 @@
 return {
-    'kyazdani42/nvim-tree.lua',
+    "kyazdani42/nvim-tree.lua",
     dependencies = {
-        'kyazdani42/nvim-web-devicons',
+        "kyazdani42/nvim-web-devicons",
         lazy = true
     },
     cmd = {
-        'NvimTreeToggle',
-        'NvimTreeFindFileToggle'
+        "NvimTreeToggle",
+        "NvimTreeFindFileToggle"
     },
     keys = {
-        '<leader>sf',
-        '<s-a-l>',
+        "<leader>sf",
+        "<s-a-l>",
     },
     config = function()
         require("nvim-tree").setup({
@@ -36,7 +36,7 @@ return {
         })
 
         local map = vim.keymap.set
-        map('n', '<leader>sf', '<cmd>NvimTreeToggle<cr>')
-        map('n', '<s-a-l>', '<cmd>NvimTreeFindFileToggle<cr>')
+        map("n", "<leader>sf", "<cmd>NvimTreeToggle<cr>")
+        map("n", "<s-a-l>", "<cmd>NvimTreeFindFileToggle<cr>")
     end
 }

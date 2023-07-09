@@ -1,25 +1,25 @@
 return {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     dependencies = {
-        'kyazdani42/nvim-web-devicons',
+        "kyazdani42/nvim-web-devicons",
         lazy = true
     },
     config = function()
-        local lualine = require('lualine')
+        local lualine = require("lualine")
         local config = {
             options = {
                 icons_enabled = vim.g.me_enable_icons,
                 component_separators = {
-                    left = '',
-                    right = '',
+                    left = "",
+                    right = "",
                 }
             }
         }
 
         if (not vim.g.me_enable_icons) then
             config.options.section_separators = {
-                left = '',
-                right = ''
+                left = "",
+                right = ""
             }
         end
 

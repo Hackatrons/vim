@@ -1,5 +1,5 @@
 return {
-    'catppuccin/nvim',
+    "catppuccin/nvim",
     -- load before other plugins
     priority = 1000,
 
@@ -16,6 +16,6 @@ return {
             }
         })
 
-        vim.cmd.colorscheme('catppuccin')
+        vim.cmd.colorscheme("catppuccin")
     end
 }
