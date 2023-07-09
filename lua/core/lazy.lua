@@ -18,7 +18,7 @@ local lazy = require("lazy")
 
 lazy.setup("plugins", {
     install = {
-        colorscheme = { "codedark" },
+        colorscheme = { "catppuccin" },
     },
     performance = {
         rtp = {
