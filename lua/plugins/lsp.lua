@@ -22,17 +22,7 @@ return {
             lsp_defaults
         )
 
-        lspconfig.lua_ls.setup({
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        -- ignore the vim global
-                        globals = { "vim" },
-                    }
-                }
-            }
-        })
-
+        lspconfig.lua_ls.setup({})
         lspconfig.tsserver.setup({})
         lspconfig.omnisharp.setup({})
 
