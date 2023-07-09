@@ -124,5 +124,4 @@ else
 end
 
 -- toggle showing whitespace characters
-map('n', '<leader>sw', function() vim.opt.list = true end)
-map('n', '<leader>hw', function() vim.opt.list = false end)
+map('n', '<leader>sw', '<cmd>set list!<cr>')
