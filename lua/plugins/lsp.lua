@@ -3,6 +3,7 @@ return {
     dependencies = {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
+        'ray-x/lsp_signature.nvim'
     },
     config = function()
         require('mason').setup()
