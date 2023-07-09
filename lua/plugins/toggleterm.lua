@@ -1,5 +1,11 @@
 return {
     "akinsho/toggleterm.nvim",
+    keys = {
+        "<c-cr>",
+    },
+    cmd = {
+        "ToggleTerm"
+    },
     config = function()
         require("toggleterm").setup({
             open_mapping = "<c-cr>",
