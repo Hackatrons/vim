@@ -11,7 +11,8 @@ return {
                 gitsigns = true,
                 nvimtree = true,
                 telescope = true,
-                notify = true
+                notify = true,
+                mason = true
             }
         })
 
