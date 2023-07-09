@@ -2,12 +2,6 @@
 
 This repository contains my Neovim settings.
 
-## Setup
-
-```sh
-git clone git@gitlab.com:DanielHack/vim.git ~/.vim
-```
-
 ## Pre-requisites
 
 - Node.js for language servers and code completion.
@@ -26,10 +20,19 @@ cmd /c mklink /D "%USERPROFILE%\AppData\Local\nvim\" "%USERPROFILE%\.vim\"
 ### Debian
 
 ```sh
-sudo apt install neovim nodejs -y
+sudo apt install snapd nodejs npm -y
+snapd install --classic nvim
 ```
 
 ```sh
 mkdir -p ~/.config/nvim/
-ln -s ~/.vim/ ~/.config/nvim/
+ln -s ~/.config/nvim/ ~/.vim
 ```
+
+## Setup
+
+```sh
+git clone git@gitlab.com:DanielHack/vim.git ~/.vim
+```
+
+Start Neovim and it will automatically do the rest.
