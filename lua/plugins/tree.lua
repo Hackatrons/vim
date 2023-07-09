@@ -4,6 +4,14 @@ return {
         'kyazdani42/nvim-web-devicons',
         lazy = true
     },
+    cmd = {
+        'NvimTreeToggle',
+        'NvimTreeFindFileToggle'
+    },
+    keys = {
+        '<leader>sf',
+        '<s-a-l>',
+    },
     config = function()
         require("nvim-tree").setup({
             sync_root_with_cwd = true,

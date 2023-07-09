@@ -5,6 +5,7 @@ return {
         'hrsh7th/cmp-buffer',
         'L3MON4D3/LuaSnip'
     },
+    event = "InsertEnter",
     config = function()
         local cmp = require('cmp')
 
