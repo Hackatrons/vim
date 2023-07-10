@@ -1,5 +1,8 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+        "windwp/nvim-ts-autotag"
+    },
     config = function()
         -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1985
         if vim.fn.has("win32") == 1 then
@@ -12,6 +15,9 @@ return {
                 enable = true
             },
             indent = {
+                enable = true
+            },
+            autotag = {
                 enable = true
             }
         })
