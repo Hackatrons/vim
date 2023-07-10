@@ -4,7 +4,7 @@ return {
         "<c-cr>",
     },
     cmd = {
-        "ToggleTerm"
+        "ToggleTerm",
     },
     config = function()
         require("toggleterm").setup({
@@ -19,7 +19,7 @@ return {
             end,
             float_opts = {
                 border = "curved",
-            }
+            },
         })
-    end
+    end,
 }

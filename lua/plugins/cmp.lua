@@ -6,8 +6,8 @@ return {
         {
             "L3MON4D3/LuaSnip",
             dependencies = {
-                "rafamadriz/friendly-snippets"
-            }
+                "rafamadriz/friendly-snippets",
+            },
         },
     },
     event = "InsertEnter",
@@ -16,7 +16,7 @@ return {
 
         local formatting = nil
 
-        if (vim.g.me_enable_icons) then
+        if vim.g.me_enable_icons then
             local kind_icons = {
                 Text = "",
                 Method = "",
@@ -42,14 +42,14 @@ return {
                 Struct = "",
                 Event = "",
                 Operator = "",
-                TypeParameter = ""
+                TypeParameter = "",
             }
 
             formatting = {
                 format = function(_, vim_item)
                     vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
                     return vim_item
-                end
+                end,
             }
         end
 
@@ -87,7 +87,7 @@ return {
         cmp.setup.filetype({ "markdown", "text" }, {
             sources = cmp.config.sources({
                 { name = "buffer" },
-            })
+            }),
         })
-    end
+    end,
 }

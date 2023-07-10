@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.background = "dark"
 
-if (vim.fn.has("termguicolors") == 1) then
+if vim.fn.has("termguicolors") == 1 then
     opt.termguicolors = true
 end
 
@@ -24,7 +24,7 @@ local cc_group = vim.api.nvim_create_augroup("CommentContinuation", { clear = tr
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
     group = cc_group,
-    command = "setlocal formatoptions-=ro"
+    command = "setlocal formatoptions-=ro",
 })
 
 -- use devicons with neovide
@@ -40,5 +40,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         })
     end,
     group = highlight_group,
-    pattern = "*"
+    pattern = "*",
 })

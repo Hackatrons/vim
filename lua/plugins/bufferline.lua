@@ -2,7 +2,7 @@ return {
     "akinsho/bufferline.nvim",
     dependencies = {
         "kyazdani42/nvim-web-devicons",
-        lazy = true
+        lazy = true,
     },
     config = function()
         local config = {
@@ -12,19 +12,19 @@ return {
                 separator_style = "slant",
                 middle_mouse_command = "bdelete! %d",
                 indicator = {
-                    style = "none"
+                    style = "none",
                 },
                 offsets = {
                     {
                         filetype = "NvimTree",
                         text = "Files",
                         highlight = "Directory",
-                    }
-                }
-            }
+                    },
+                },
+            },
         }
 
-        if (not vim.g.me_enable_icons) then
+        if not vim.g.me_enable_icons then
             config.options.buffer_close_icon = "x"
             config.options.modified_icon = "+"
             config.options.left_trunc_marker = "<-"
@@ -33,5 +33,5 @@ return {
         end
 
         require("bufferline").setup(config)
-    end
+    end,
 }

@@ -2,7 +2,7 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.1",
     dependencies = {
-        "nvim-lua/plenary.nvim"
+        "nvim-lua/plenary.nvim",
     },
     config = function()
         local actions = require("telescope.actions")
@@ -14,7 +14,7 @@ return {
                     ".git",
                     "node_modules",
                     "bin",
-                    "obj"
+                    "obj",
                 },
                 path_display = { "smart" },
                 mappings = {
@@ -25,8 +25,8 @@ return {
                         ["<tab>"] = actions.move_selection_next,
                         ["<s-tab>"] = actions.move_selection_previous,
                     },
-                }
-            }
+                },
+            },
         })
-    end
+    end,
 }

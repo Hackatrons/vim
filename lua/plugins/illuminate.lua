@@ -8,8 +8,8 @@ return {
                 "regex",
             },
             filetypes_denylist = {
-                "NvimTree"
-            }
+                "NvimTree",
+            },
         })
-    end
+    end,
 }

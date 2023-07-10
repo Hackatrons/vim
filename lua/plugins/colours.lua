@@ -12,10 +12,10 @@ return {
                 nvimtree = true,
                 telescope = true,
                 notify = true,
-                mason = true
-            }
+                mason = true,
+            },
         })
 
         vim.cmd.colorscheme("catppuccin")
-    end
+    end,
 }

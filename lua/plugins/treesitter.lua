@@ -1,25 +1,25 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
-        "windwp/nvim-ts-autotag"
+        "windwp/nvim-ts-autotag",
     },
     config = function()
         -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1985
         if vim.fn.has("win32") == 1 then
-            require "nvim-treesitter.install".compilers = { "zig" }
+            require("nvim-treesitter.install").compilers = { "zig" }
         end
 
         require("nvim-treesitter.configs").setup({
             ensure_installed = { "lua", "javascript", "typescript", "html", "c_sharp" },
             highlight = {
-                enable = true
+                enable = true,
             },
             indent = {
-                enable = true
+                enable = true,
             },
             autotag = {
-                enable = true
-            }
+                enable = true,
+            },
         })
-    end
+    end,
 }

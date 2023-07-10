@@ -3,7 +3,7 @@ return {
     config = function()
         require("Comment").setup({
             -- disable mappings as it conflicts with my 'gb' bind
-            mappings = false
+            mappings = false,
         })
 
         local map = vim.keymap.set
@@ -14,5 +14,5 @@ return {
 
         -- visual studio muscle memory binding
         map("v", "<c-k><c-c>", "<Plug>(comment_toggle_linewise_visual)")
-    end
+    end,
 }

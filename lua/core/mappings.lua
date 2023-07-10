@@ -109,7 +109,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local options = {
             buffer = args.buf,
-            silent = true
+            silent = true,
         }
 
         local telescope = require("telescope.builtin")
@@ -128,11 +128,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "<leader>fd", vim.lsp.buf.format, options)
         -- visual studio keybinding muscle memory
         map("n", "<c-k><c-d>", vim.lsp.buf.format, options)
-    end
+    end,
 })
 
 -- open url under cursor
-if (vim.fn.has("win32")) then
+if vim.fn.has("win32") then
     map("n", "gx", ":!start <cfile><cr>")
 else
     map("n", "gx", ":!open <cfile><cr>")

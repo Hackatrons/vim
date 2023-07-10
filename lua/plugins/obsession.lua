@@ -13,16 +13,18 @@ return {
             pattern = "*",
             callback = function()
                 -- if neovim was opened with arguments then don't use a session
-                if (vim.fn.argc() > 0) then return end
+                if vim.fn.argc() > 0 then
+                    return
+                end
 
-                if (vim.fn.filereadable(sessionFile) == 1) then
+                if vim.fn.filereadable(sessionFile) == 1 then
                     -- session file exists, resume it
                     vim.cmd("source " .. sessionFile)
                 else
                     -- session file doesn't exist, start a new session
                     vim.cmd("Obsession " .. sessionFile)
                 end
-            end
+            end,
         })
-    end
+    end,
 }
