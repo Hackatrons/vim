@@ -3,7 +3,12 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
-        "L3MON4D3/LuaSnip"
+        {
+            "L3MON4D3/LuaSnip",
+            dependencies = {
+                "rafamadriz/friendly-snippets"
+            }
+        },
     },
     event = "InsertEnter",
     config = function()
