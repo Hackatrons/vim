@@ -11,7 +11,7 @@ return {
             open_mapping = "<c-cr>",
             direction = "float",
             shell = function()
-                if vim.loop.os_uname().sysname == "Windows NT" and vim.fn.executable("pwsh.exe") then
+                if vim.loop.os_uname().sysname == "Windows_NT" and vim.fn.executable("pwsh.exe") then
                     return "pwsh.exe"
                 end
 
