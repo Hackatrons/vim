@@ -2,8 +2,7 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.1",
     dependencies = {
-        "nvim-lua/plenary.nvim",
-        "desdic/telescope-rooter.nvim",
+        "nvim-lua/plenary.nvim"
     },
     config = function()
         local actions = require("telescope.actions")
@@ -27,16 +26,7 @@ return {
                         ["<s-tab>"] = actions.move_selection_previous,
                     },
                 }
-            },
-            extensions = {
-                rooter = {
-                    enable = true,
-                    patterns = { ".git" },
-                    debug = false
-                }
             }
         })
-
-        telescope.load_extension("rooter")
     end
 }
