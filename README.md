@@ -5,11 +5,12 @@ This repository contains my Neovim settings.
 ## Pre-requisites
 
 - Node.js for language servers and code completion.
+- ripgrep and fd for fuzzy finding.
 
 ### Windows
 
 ```powershell
-choco install neovide nodejs
+choco install neovide nodejs ripgrep fd
 ```
 
 ```powershell
@@ -20,7 +21,7 @@ cmd /c mklink /D "%USERPROFILE%\AppData\Local\nvim\" "%USERPROFILE%\.vim\"
 ### Debian
 
 ```sh
-sudo apt install snapd nodejs npm -y
+sudo apt install snapd nodejs npm ripgrep fd-find -y
 sudo snapd install --classic nvim
 ```
 
