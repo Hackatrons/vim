@@ -7,8 +7,9 @@ return {
     },
     config = function()
         local actions = require("telescope.actions")
+        local telescope = require("telescope")
 
-        require("telescope").setup({
+        telescope.setup({
             defaults = {
                 file_ignore_patterns = {
                     ".git",
@@ -16,10 +17,10 @@ return {
                     "bin",
                     "obj"
                 },
-                -- only show the filename, exclude path
-                path_display = { "tail" },
+                path_display = { "smart" },
                 mappings = {
                     i = {
+                        ["<esc>"] = actions.close,
                         ["<a-j>"] = actions.move_selection_next,
                         ["<a-k>"] = actions.move_selection_previous,
                         ["<tab>"] = actions.move_selection_next,
@@ -36,6 +37,6 @@ return {
             }
         })
 
-        require("telescope").load_extension("rooter")
+        telescope.load_extension("rooter")
     end
 }
