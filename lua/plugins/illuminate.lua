@@ -1,16 +1,17 @@
 return {
     "RRethy/vim-illuminate",
     event = "InsertEnter",
-    config = function()
-        require("illuminate").configure({
-            providers = {
-                "lsp",
-                "treesitter",
-                "regex",
-            },
-            filetypes_denylist = {
-                "NvimTree",
-            },
-        })
-    end,
+    opts = {
+        providers = {
+            "lsp",
+            "treesitter",
+            "regex",
+        },
+        filetypes_denylist = {
+            "NvimTree",
+        },
+    },
+    config = function(_, opts)
+        require("illuminate").configure(opts)
+    end
 }

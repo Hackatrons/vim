@@ -4,7 +4,7 @@ return {
         "kyazdani42/nvim-web-devicons",
         lazy = true,
     },
-    config = function()
+    opts = function()
         local config = {
             options = {
                 show_close_icon = false,
@@ -32,6 +32,6 @@ return {
             config.options.separator_style = "thick"
         end
 
-        require("bufferline").setup(config)
+        return config
     end,
 }

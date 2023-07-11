@@ -9,33 +9,27 @@ return {
         "NvimTreeFindFileToggle",
     },
     keys = {
-        "<leader>sf",
-        "<s-a-l>",
+        { "<leader>sf", "<cmd>NvimTreeToggle<cr>" },
+        { "<s-a-l>",    "<cmd>NvimTreeFindFileToggle<cr>" },
     },
-    config = function()
-        require("nvim-tree").setup({
-            actions = {
-                open_file = {
-                    quit_on_open = true,
+    opts = {
+        actions = {
+            open_file = {
+                quit_on_open = true,
+            },
+        },
+        renderer = {
+            indent_markers = {
+                enable = true,
+            },
+            icons = {
+                show = {
+                    file = vim.g.me_enable_icons,
+                    folder = vim.g.me_enable_icons,
+                    folder_arrow = vim.g.me_enable_icons,
+                    git = vim.g.me_enable_icons,
                 },
             },
-            renderer = {
-                indent_markers = {
-                    enable = true,
-                },
-                icons = {
-                    show = {
-                        file = vim.g.me_enable_icons,
-                        folder = vim.g.me_enable_icons,
-                        folder_arrow = vim.g.me_enable_icons,
-                        git = vim.g.me_enable_icons,
-                    },
-                },
-            },
-        })
-
-        local map = vim.keymap.set
-        map("n", "<leader>sf", "<cmd>NvimTreeToggle<cr>")
-        map("n", "<s-a-l>", "<cmd>NvimTreeFindFileToggle<cr>")
-    end,
+        },
+    },
 }

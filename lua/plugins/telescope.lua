@@ -5,11 +5,10 @@ return {
         "nvim-lua/plenary.nvim",
     },
     event = "VeryLazy",
-    config = function()
+    opts = function()
         local actions = require("telescope.actions")
-        local telescope = require("telescope")
 
-        telescope.setup({
+        return {
             defaults = {
                 file_ignore_patterns = {
                     ".git",
@@ -28,6 +27,6 @@ return {
                     },
                 },
             },
-        })
+        }
     end,
 }
