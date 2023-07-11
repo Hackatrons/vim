@@ -5,6 +5,7 @@ return {
         "jayp0521/mason-null-ls.nvim",
         "nvim-lua/plenary.nvim",
     },
+    event = "VeryLazy",
     config = function()
         require("mason-null-ls").setup({
             ensure_installed = {

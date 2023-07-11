@@ -16,7 +16,7 @@ return {
             },
         },
     },
-    event = "InsertEnter",
+    event = "VeryLazy",
     config = function()
         local cmp = require("cmp")
         local formatting = nil

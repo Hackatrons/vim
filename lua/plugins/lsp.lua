@@ -5,6 +5,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "ray-x/lsp_signature.nvim",
     },
+    event = "VeryLazy",
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
