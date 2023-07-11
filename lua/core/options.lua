@@ -85,3 +85,5 @@ opt.cmdheight = 0
 if vim.fn.has("win32") == 1 then
     opt.guifont = "Cascadia Mono:h14"
 end
+
+opt.completeopt = { "menu", "menuone", "noselect" }

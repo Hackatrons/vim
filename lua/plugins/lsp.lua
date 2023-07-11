@@ -1,19 +1,24 @@
 return {
     {
-        "williamboman/mason-lspconfig.nvim",
+        "hrsh7th/cmp-nvim-lsp",
         dependencies = {
-            {
+            "williamboman/mason-lspconfig.nvim",
+            dependencies = {
                 "neovim/nvim-lspconfig",
-                "williamboman/mason.nvim",
+                {
+                    "williamboman/mason.nvim",
+                    opts = {},
+                },
+            },
+            opts = {
+                ensure_installed = {
+                    "tsserver",
+                    "lua_ls",
+                    "omnisharp",
+                },
             },
         },
-        event = { "BufReadPre", "BufNewFile" },
         config = function()
-            require("mason").setup()
-            require("mason-lspconfig").setup({
-                ensure_installed = { "tsserver", "lua_ls", "omnisharp" },
-            })
-
             local lsp_defaults = {
                 capabilities = require("cmp_nvim_lsp").default_capabilities(),
             }
