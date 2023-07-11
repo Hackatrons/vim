@@ -61,9 +61,6 @@ opt.fileencoding = "utf-8"
 opt.history = 1000
 opt.undolevels = 1000
 
--- auto set the working directory to the directory of the current file
-opt.autochdir = true
-
 -- whitespace characters
 opt.listchars = "tab:>- ,lead:.,trail:."
 
