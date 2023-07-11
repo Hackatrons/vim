@@ -1,6 +1,6 @@
 return {
     "RRethy/vim-illuminate",
-    event = "InsertEnter",
+    event = "VeryLazy",
     opts = {
         providers = {
             "lsp",
@@ -9,9 +9,10 @@ return {
         },
         filetypes_denylist = {
             "NvimTree",
+            "lazy",
         },
     },
     config = function(_, opts)
         require("illuminate").configure(opts)
-    end
+    end,
 }
