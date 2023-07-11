@@ -140,3 +140,9 @@ end
 
 -- toggle showing whitespace characters
 map("n", "<leader>sw", "<cmd>set list!<cr>")
+
+-- reselect after indenting
+map("x", ">", ">gv")
+map("x", "<", "<gv")
+map("x", "<tab>", ">gv")
+map("x", "<s-tab>", "<gv")
