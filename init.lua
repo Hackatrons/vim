@@ -1,4 +1,4 @@
 require("core/options")
-require("core/mappings")
-require("core/style")
+require("core/keymaps")
+require("core/autocmds")
 require("core/lazy")

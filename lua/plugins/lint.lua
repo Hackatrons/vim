@@ -1,7 +1,6 @@
 return {
     {
         "jayp0521/mason-null-ls.nvim",
-        event = "VeryLazy",
         opts = {
             ensure_installed = {
                 "markdownlint",
@@ -15,10 +14,9 @@ return {
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
-        event = "VeryLazy",
-        config = function()
+        opts = function()
             local null_ls = require("null-ls")
-            local opts = {
+            return {
                 sources = {
                     null_ls.builtins.diagnostics.markdownlint.with({
                         -- disable max width 80 chars rule
@@ -28,7 +26,6 @@ return {
                     null_ls.builtins.formatting.stylua,
                 },
             }
-            null_ls.setup(opts)
         end,
     },
 }
