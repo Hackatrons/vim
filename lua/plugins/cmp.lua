@@ -4,6 +4,12 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         {
+            "saadparwaiz1/cmp_luasnip",
+            dependencies = {
+                "L3MON4D3/LuaSnip",
+            },
+        },
+        {
             "L3MON4D3/LuaSnip",
             dependencies = {
                 "rafamadriz/friendly-snippets",
@@ -13,7 +19,6 @@ return {
     event = "InsertEnter",
     config = function()
         local cmp = require("cmp")
-
         local formatting = nil
 
         if vim.g.me_enable_icons then
@@ -56,6 +61,10 @@ return {
         vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
         local luasnip = require("luasnip")
+
+        -- load vscode style snippets from any package.json defined in our runtime path
+        -- friendly-snippet has a packages.json file that this will consume
+        require("luasnip.loaders.from_vscode").lazy_load()
 
         cmp.setup({
             snippet = {
