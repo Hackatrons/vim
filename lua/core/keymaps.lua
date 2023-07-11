@@ -45,7 +45,7 @@ map("n", "<c-n>", ":bnext<cr>")
 map("n", "<c-p>", ":bprev<cr>")
 
 -- clear highlighting from last search
-map("n", "//", ":noh<cr>")
+map("n", "<esc>", ":noh<cr>")
 
 -- deletes previous word
 map("i", "<c-bs>", "<c-w>")
