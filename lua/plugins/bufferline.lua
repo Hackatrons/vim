@@ -7,13 +7,10 @@ return {
     opts = function()
         local config = {
             options = {
-                show_close_icon = false,
+                show_buffer_close_icons = false,
                 show_buffer_icons = vim.g.me_enable_icons,
                 separator_style = "slant",
                 middle_mouse_command = "bdelete! %d",
-                indicator = {
-                    style = "none",
-                },
                 offsets = {
                     {
                         filetype = "NvimTree",
@@ -25,6 +22,9 @@ return {
         }
 
         if not vim.g.me_enable_icons then
+            config.options.indicator = {
+                style = "none"
+            }
             config.options.buffer_close_icon = "x"
             config.options.modified_icon = "+"
             config.options.left_trunc_marker = "<-"
