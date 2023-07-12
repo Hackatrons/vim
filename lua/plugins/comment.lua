@@ -1,6 +1,6 @@
 return {
     "numToStr/Comment.nvim",
-    event = "InsertEnter",
+    event = "VeryLazy",
     opts = {
         -- disable mappings as it conflicts with my 'gb' bind
         mappings = false,

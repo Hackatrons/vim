@@ -1,6 +1,7 @@
 return {
     {
         "hrsh7th/cmp-nvim-lsp",
+        event = { "BufReadPost", "BufNewFile" },
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
             dependencies = {

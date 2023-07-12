@@ -1,6 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        event = "BufRead",
         opts = {
             ensure_installed = { "lua", "javascript", "typescript", "html", "c_sharp" },
             highlight = {
@@ -24,7 +25,7 @@ return {
     },
     {
         "windwp/nvim-ts-autotag",
-        event = "InsertEnter",
+        event = "VeryLazy",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
