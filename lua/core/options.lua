@@ -83,4 +83,8 @@ if vim.fn.has("win32") == 1 then
     opt.guifont = "Cascadia Mono:h14"
 end
 
+-- popup menu behaviour
 opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- disable the intro screen
+vim.o.shortmess = vim.o.shortmess .. "I"
