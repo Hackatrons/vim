@@ -11,6 +11,9 @@ return {
         vim.api.nvim_create_autocmd("VimEnter", {
             group = group,
             pattern = "*",
+            -- fixes highlighting not working after restoring a session
+            -- https://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session/10525050#10525050
+            nested = true,
             callback = function()
                 -- if neovim was opened with arguments then don't use a session
                 if vim.fn.argc() > 0 then
