@@ -10,7 +10,7 @@ This repository contains my Neovim settings.
 ### Windows
 
 ```powershell
-choco install neovide nodejs ripgrep fd
+choco install neovide nodejs ripgrep fd zig
 ```
 
 ```powershell
