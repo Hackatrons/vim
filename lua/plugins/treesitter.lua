@@ -2,6 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         event = "BufRead",
+        version = "0.9.1",
         opts = {
             ensure_installed = { "lua", "javascript", "typescript", "html", "c_sharp" },
             highlight = {
