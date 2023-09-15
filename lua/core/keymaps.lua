@@ -147,3 +147,6 @@ map("x", ">", ">gv")
 map("x", "<", "<gv")
 map("x", "<tab>", ">gv")
 map("x", "<s-tab>", "<gv")
+
+-- no neck pain toggle
+map("n", "<leader>np", "<cmd>NoNeckPain<cr>")
