@@ -102,6 +102,7 @@ map("n", "<a-up>", ":resize -2<cr>")
 map("n", "<leader>ff", ":Telescope find_files<cr>")
 map("n", "<leader>fb", ":Telescope buffers<cr>")
 map("n", "<leader>fg", ":Telescope live_grep<cr>")
+map("n", "<leader>fr", ":Telescope resume<cr>")
 
 -- lsp mappings
 vim.api.nvim_create_autocmd("LspAttach", {
