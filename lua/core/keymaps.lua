@@ -31,9 +31,6 @@ map("n", "<c-a>", "ggVG")
 -- shortcut to escape in insert mode
 map("i", "jk", "<esc>")
 
--- easier to type ;w than :w
-map("n", ";", ":")
-
 -- reload our vimconfig
 map("n", "<leader>sv", ":luafile %<cr>")
 
