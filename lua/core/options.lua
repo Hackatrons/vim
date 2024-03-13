@@ -23,6 +23,9 @@ opt.cindent = true
 -- disable them for other UIs that haven't got a patched font configured
 vim.g.me_enable_icons = vim.g.neovide or false
 
+-- disable animated scrolling as it makes me motion sick
+vim.g.neovide_scroll_animation_length = 0
+
 -- case insensitive searching
 opt.smartcase = true
 opt.ignorecase = true
