@@ -92,5 +92,5 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 -- disable the intro screen
 vim.o.shortmess = vim.o.shortmess .. "I"
 
--- Don't let Vim's "Found a swap file" message block input
-vim.o.shortmess = vim.o.shortmess .. "A"
+-- disable swap files
+vim.o.swapfile = false
