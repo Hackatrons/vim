@@ -13,8 +13,8 @@ map("n", "<c-y>", "<c-r>")
 map("i", "<c-y>", "<c-o><c-r>")
 
 -- save
-map("i", "<c-s>", "<esc>:update<cr>gi")
-map("n", "<c-s>", ":update<cr>")
+map("i", "<c-s>", "<cmd>update<cr>")
+map("n", "<c-s>", "<cmd>update<cr>")
 
 -- copy and paste to system clipboard
 map("v", "<c-c>", '"+y')
@@ -32,17 +32,17 @@ map("n", "<c-a>", "ggVG")
 map("i", "jk", "<esc>")
 
 -- reload our vimconfig
-map("n", "<leader>sv", ":luafile %<cr>")
+map("n", "<leader>sv", "<cmd>luafile %<cr>")
 
 -- edit vimconfig
-map("n", "<leader>ev", ":e ~/.vim/lua<cr>")
+map("n", "<leader>ev", "<cmd>e ~/.vim/lua<cr>")
 
 -- switch between buffers
-map("n", "<c-n>", ":bnext<cr>")
-map("n", "<c-p>", ":bprev<cr>")
+map("n", "<c-n>", "<cmd>bnext<cr>")
+map("n", "<c-p>", "<cmd>bprev<cr>")
 
 -- clear highlighting from last search
-map("n", "<esc>", ":noh<cr>")
+map("n", "<esc>", "<cmd>noh<cr>")
 
 -- deletes previous word
 map("i", "<c-bs>", "<c-w>")
@@ -68,10 +68,10 @@ function WinMove(key)
     end
 end
 
-map("n", "<c-w>k", ":lua WinMove('k')<cr>")
-map("n", "<c-w>j", ":lua WinMove('j')<cr>")
-map("n", "<c-w>h", ":lua WinMove('h')<cr>")
-map("n", "<c-w>l", ":lua WinMove('l')<cr>")
+map("n", "<c-w>k", "<cmd>lua WinMove('k')<cr>")
+map("n", "<c-w>j", "<cmd>lua WinMove('j')<cr>")
+map("n", "<c-w>h", "<cmd>lua WinMove('h')<cr>")
+map("n", "<c-w>l", "<cmd>lua WinMove('l')<cr>")
 
 -- jump back and forward
 map("n", "gf", "<c-i>")
@@ -90,16 +90,16 @@ map("c", "<c-v>", "<c-r>+", { silent = false })
 map("c", "<c-bs>", "<c-w>", { silent = false })
 
 -- resize windows
-map("n", "<a-right>", ":vertical resize +2<cr>")
-map("n", "<a-left>", ":vertical resize -2<cr>")
-map("n", "<a-down>", ":resize +2<cr>")
-map("n", "<a-up>", ":resize -2<cr>")
+map("n", "<a-right>", "<cmd>vertical resize +2<cr>")
+map("n", "<a-left>", "<cmd>vertical resize -2<cr>")
+map("n", "<a-down>", "<cmd>resize +2<cr>")
+map("n", "<a-up>", "<cmd>resize -2<cr>")
 
 -- telescope
-map("n", "<leader>ff", ":Telescope find_files<cr>")
-map("n", "<leader>fb", ":Telescope buffers<cr>")
-map("n", "<leader>fg", ":Telescope live_grep<cr>")
-map("n", "<leader>fr", ":Telescope resume<cr>")
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
+map("n", "<leader>fr", "<cmd>Telescope resume<cr>")
 
 -- lsp mappings
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -131,9 +131,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- open url under cursor
 if vim.fn.has("win32") then
-    map("n", "gx", ":!start <cfile><cr>")
+    map("n", "gx", "<cmd>!start <cfile><cr>")
 else
-    map("n", "gx", ":!open <cfile><cr>")
+    map("n", "gx", "<cmd>!open <cfile><cr>")
 end
 
 -- toggle showing whitespace characters
