@@ -58,7 +58,6 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ["<c-space>"] = cmp.mapping.complete({ select = true }),
                 ["<tab>"] = cmp.mapping.confirm({
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,

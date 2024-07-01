@@ -126,6 +126,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "<leader>fd", vim.lsp.buf.format, options)
         -- visual studio keybinding muscle memory
         map("n", "<c-k><c-d>", vim.lsp.buf.format, options)
+
+        -- show documentation
+        map("i", "<c-space>", vim.lsp.buf.signature_help, options)
+        map("i", "<c-k>", vim.lsp.buf.signature_help, options)
     end,
 })
 
