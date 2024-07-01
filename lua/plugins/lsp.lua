@@ -40,12 +40,4 @@ return {
             })
         end,
     },
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-        opts = {
-            -- hide the virtual text hint
-            hint_enable = false,
-        },
-    },
 }
