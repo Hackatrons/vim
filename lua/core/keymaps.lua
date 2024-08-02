@@ -2,8 +2,6 @@ local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
-vim.opt.pastetoggle = "<F2>"
-
 -- undo
 map("n", "<c-z>", "u")
 map("i", "<c-z>", "<c-o>u")
