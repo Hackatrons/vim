@@ -13,7 +13,7 @@ return {
             },
             opts = {
                 ensure_installed = {
-                    "tsserver",
+                    "ts_ls",
                     "lua_ls",
                     "omnisharp",
                 },
@@ -28,7 +28,7 @@ return {
             lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
 
             lspconfig.lua_ls.setup({})
-            lspconfig.tsserver.setup({})
+            lspconfig.ts_ls.setup({})
             lspconfig.omnisharp.setup({})
 
             vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
