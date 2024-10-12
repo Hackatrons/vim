@@ -155,3 +155,9 @@ map("n", "<leader>np", "<cmd>NoNeckPain<cr>")
 map("n", "<leader>wf", "<cmd>SessionSearch<CR>", { desc = "Session search" })
 map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Session restore" })
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })
+
+-- file explorer
+map("n", "<leader>ee", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle explorer" })
+map("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Find current file in explorer" })
+-- resharper muscle memory
+map("n", "<s-a-l>", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Find current file in explorer" })

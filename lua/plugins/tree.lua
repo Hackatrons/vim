@@ -3,16 +3,7 @@ return {
     dependencies = {
         "kyazdani42/nvim-web-devicons",
     },
-    cmd = {
-        "NvimTreeToggle",
-        "NvimTreeFindFileToggle",
-    },
-    keys = {
-        { "<leader>ee", "<cmd>NvimTreeToggle<cr>" },
-        { "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>" },
-        -- resharper muscle memory
-        { "<s-a-l>", "<cmd>NvimTreeFindFileToggle<cr>" },
-    },
+    event = "VeryLazy",
     opts = {
         actions = {
             open_file = {
