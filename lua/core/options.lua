@@ -94,3 +94,6 @@ vim.o.shortmess = vim.o.shortmess .. "I"
 
 -- disable swap files
 vim.o.swapfile = false
+
+-- use system clipboard
+opt.clipboard:append { 'unnamed', 'unnamedplus' }
