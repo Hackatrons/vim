@@ -8,8 +8,10 @@ return {
         "NvimTreeFindFileToggle",
     },
     keys = {
-        { "<leader>sf", "<cmd>NvimTreeToggle<cr>" },
-        { "<s-a-l>",    "<cmd>NvimTreeFindFileToggle<cr>" },
+        { "<leader>ee", "<cmd>NvimTreeToggle<cr>" },
+        { "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>" },
+        -- resharper muscle memory
+        { "<s-a-l>", "<cmd>NvimTreeFindFileToggle<cr>" },
     },
     opts = {
         actions = {
