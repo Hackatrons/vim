@@ -150,3 +150,8 @@ map("x", "<s-tab>", "<gv")
 
 -- no neck pain toggle
 map("n", "<leader>np", "<cmd>NoNeckPain<cr>")
+
+-- session management
+map("n", "<leader>wf", "<cmd>SessionSearch<CR>", { desc = "Session search" })
+map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Session restore" })
+map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })

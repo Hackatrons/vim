@@ -97,3 +97,6 @@ vim.o.swapfile = false
 
 -- use system clipboard
 opt.clipboard:append { 'unnamed', 'unnamedplus' }
+
+-- save/restore as much as possible with sessions
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
