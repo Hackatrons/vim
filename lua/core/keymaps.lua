@@ -70,6 +70,7 @@ map("n", "<c-w>k", "<cmd>lua WinMove('k')<cr>")
 map("n", "<c-w>j", "<cmd>lua WinMove('j')<cr>")
 map("n", "<c-w>h", "<cmd>lua WinMove('h')<cr>")
 map("n", "<c-w>l", "<cmd>lua WinMove('l')<cr>")
+map("n", "<c-w>x", "<cmd>close<cr>")
 
 -- jump back and forward
 map("n", "gf", "<c-i>")
