@@ -123,8 +123,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "K", vim.lsp.buf.hover)
 
         map("n", "<leader>fd", vim.lsp.buf.format, options)
-        -- visual studio keybinding muscle memory
-        map("n", "<c-k><c-d>", vim.lsp.buf.format, options)
 
         -- show documentation
         map("i", "<c-space>", vim.lsp.buf.signature_help, options)
@@ -159,5 +157,14 @@ map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })
 -- file explorer
 map("n", "<leader>ee", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle explorer" })
 map("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Find current file in explorer" })
+
 -- resharper muscle memory
 map("n", "<s-a-l>", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Find current file in explorer" })
+
+local function format()
+    require("conform").format()
+end
+
+map({ "n", "v" }, "<leader>fd", format, { desc = "Format file or range (in visual mode)" })
+-- visual studio keybinding muscle memory
+map({ "n", "v" }, "<c-k><c-d>", format, { desc = "Format file or range (in visual mode)" })
