@@ -31,6 +31,7 @@ return {
     event = "VeryLazy",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
         "hrsh7th/cmp-buffer",
         {
             "saadparwaiz1/cmp_luasnip",
@@ -69,6 +70,7 @@ return {
                 -- put snippets first (or could specify the priority number) to order them above lsp suggestions
                 { name = "luasnip" },
                 { name = "nvim_lsp" },
+                { name = "nvim_lsp_signature_help" },
             },
             formatting = {
                 format = function(_, vim_item)
@@ -92,3 +94,4 @@ return {
         })
     end,
 }
+
