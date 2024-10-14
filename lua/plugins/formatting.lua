@@ -1,7 +1,6 @@
 return {
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        dependencies = {},
         opts = {
             ensure_installed = {
                 "prettier",
