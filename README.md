@@ -33,7 +33,7 @@ ln -s ~/.config/nvim/ ~/.vim
 ## Setup
 
 ```sh
-git clone git@gitlab.com:DanielHack/vim.git ~/.vim
+git clone https://github.com/hackatrons/vim ~/.vim
 ```
 
 Start Neovim and it will automatically do the rest.
