@@ -18,7 +18,7 @@ git clone https://github.com/hackatrons/vim ~/.vim
 Install pre-requisites:
 
 ```powershell
-choco install neovide nodejs ripgrep fd
+choco install neovide nodejs ripgrep fd deno
 ```
 
 Link the config:
@@ -33,7 +33,7 @@ cmd /c mklink /D "%USERPROFILE%\AppData\Local\nvim\" "%USERPROFILE%\.vim\"
 Install pre-requisites:
 
 ```sh
-sudo apt install nodejs npm ripgrep fd-find -y
+sudo apt install nodejs npm ripgrep fd-find deno -y
 ```
 
 Install neovim:
