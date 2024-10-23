@@ -11,16 +11,12 @@ map("n", "<c-y>", "<c-r>")
 map("i", "<c-y>", "<c-o><c-r>")
 
 -- save
-map("i", "<c-s>", "<cmd>update<cr>")
-map("n", "<c-s>", "<cmd>update<cr>")
+map({ "i", "n" }, "<c-s>", "<cmd>update<cr>")
 
 -- copy and paste to system clipboard
 map("v", "<c-c>", '"+y')
 map("i", "<c-v>", '<c-o>"+gP')
 map("n", "<c-v>", '"+gP')
-
--- paste without copying selected text
-map("v", "p", '"0p')
 
 -- cut without copying
 map("n", "x", '"_x')
