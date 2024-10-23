@@ -1,7 +1,7 @@
 local kind_icons = {
     Text = "",
     Method = "",
-    Function = "",
+    Function = "",
     Constructor = "",
     Field = "",
     Variable = "",
@@ -73,9 +73,10 @@ return {
                 { name = "nvim_lsp_signature_help" },
             },
             formatting = {
+                fields = { "kind", "abbr", "menu" },
                 format = function(_, vim_item)
                     if vim.g.me_enable_icons then
-                        vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+                        vim_item.kind = kind_icons[vim_item.kind]
                     end
 
                     return vim_item
