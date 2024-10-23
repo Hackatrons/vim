@@ -22,6 +22,9 @@ map("n", "<c-v>", '"+gP')
 -- paste without copying selected text
 map("v", "p", '"0p')
 
+-- cut without copying
+map("n", "x", '"_x')
+
 -- select all
 map("i", "<c-a>", "<esc>ggVG")
 map("n", "<c-a>", "ggVG")
