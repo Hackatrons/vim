@@ -15,6 +15,7 @@ return {
                 "ts_ls",
                 "lua_ls",
                 "omnisharp",
+                "bicep",
             },
         },
     },
@@ -29,6 +30,7 @@ return {
         lspconfig.lua_ls.setup({})
         lspconfig.ts_ls.setup({})
         lspconfig.omnisharp.setup({})
+        lspconfig.bicep.setup({})
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
             border = "rounded",
