@@ -167,3 +167,7 @@ end
 map({ "n", "v" }, "<leader>fd", format, { desc = "Format file or range (in visual mode)" })
 -- visual studio keybinding muscle memory
 map({ "n", "v" }, "<c-k><c-d>", format, { desc = "Format file or range (in visual mode)" })
+
+-- change inside quotes without overwriting yank register
+map("n", 'ci"', '"_ci"')
+map("n", 'di"', '"_di"')
