@@ -171,3 +171,6 @@ map({ "n", "v" }, "<c-k><c-d>", format, { desc = "Format file or range (in visua
 -- change inside quotes without overwriting yank register
 map("n", 'ci"', '"_ci"')
 map("n", 'di"', '"_di"')
+
+-- delete in visual mode without overwriting yank register
+map("v", "d", '"_d')
