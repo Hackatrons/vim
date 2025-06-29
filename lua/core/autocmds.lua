@@ -38,3 +38,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
     end,
 })
+
+-- important to use linux line endings when editing cron files
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = "*.cron",
+  callback = function()
+    vim.bo.fileformat = "unix"
+  end,
+})
