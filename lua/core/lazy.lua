@@ -20,6 +20,10 @@ lazy.setup("plugins", {
     install = {
         colorscheme = { "catppuccin" },
     },
+    defaults = {
+        -- use latest stable version for plugins
+        version = "*"
+    },
     performance = {
         rtp = {
             disabled_plugins = {
