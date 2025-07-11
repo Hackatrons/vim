@@ -47,7 +47,6 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 Link the config:
 
 ```sh
-mkdir -p ~/.config/nvim/
 ln -s ~/.config/nvim/ ~/.vim
 ```
 
@@ -55,6 +54,13 @@ Then add this to your shell config (~/.bashrc, ~/.zshrc, ...):
 
 ```sh
 export PATH="$PATH:/opt/nvim-linux64/bin"
+```
+
+### Arch
+
+```sh
+sudo pacman -S neovim
+ln -s ~/.vim ~/.config/nvim/
 ```
 
 ## Run
