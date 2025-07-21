@@ -58,9 +58,28 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 
 ### Arch
 
+Install pre-requisites:
+
+```sh
+sudo pacman -S nodejs npm
+```
+
+Install neovim:
+
 ```sh
 sudo pacman -S neovim
+```
+
+Link the config:
+
+```sh
 ln -s ~/.vim ~/.config/nvim/
+```
+
+## Configure Git
+
+```sh
+git config --global core.editor "nvim"
 ```
 
 ## Run
