@@ -27,11 +27,6 @@ return {
 
         lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
 
-        lspconfig.lua_ls.setup({})
-        lspconfig.ts_ls.setup({})
-        lspconfig.omnisharp.setup({})
-        lspconfig.bicep.setup({})
-
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
             border = "rounded",
         })
