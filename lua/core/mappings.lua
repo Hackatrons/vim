@@ -15,8 +15,11 @@ map({ "i", "n" }, "<c-s>", "<cmd>update<cr>")
 
 -- copy and paste to system clipboard
 map("v", "<c-c>", '"+y')
-map("i", "<c-v>", '<c-o>"+gP')
-map("n", "<c-v>", '"+gP')
+map("i", "<c-v>", '<c-o>"+gp')
+map("n", "<c-v>", '"+gp')
+
+-- paste in visual mode
+map("v", "<c-v>", "<s-p>")
 
 -- cut without copying
 map("n", "x", '"_x')
